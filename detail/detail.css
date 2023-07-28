@@ -1,0 +1,1422 @@
+@font-face {
+    font-family: 'KOTRA_GOTHIC';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/KOTRA_GOTHIC.woff') format('woff');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+body {
+    background-color: #fcf9ee;
+    font-family: 'Bookk Myungjo';
+}
+
+/* HEADER */
+.header_wrap {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+header {
+    position: relative;
+    height: 80px;
+    padding: 0 45px;
+    border-bottom: 1px solid #b3b0a94d;
+    background-color: #fcf9ee;
+}
+
+header::after {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    background-color: #fcf9ee;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    height: 85px;
+    transition: all 0.3s;
+    transform: translateY(80px);
+    opacity: 0;
+}
+
+header.hovered::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* TOP_BANNER */
+.top_banner {
+    width: 100%;
+    height: 40px;
+    background-color: black;
+    overflow: hidden;
+}
+
+.top_banner li {
+    height: inherit;
+    line-height: 40px;
+    padding-left: 20px;
+}
+
+.top_banner li a {
+    color: rgba(255, 255, 255, 0.699);
+}
+
+
+header .header_inner {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(8, 8, 8);
+}
+
+.header_inner .header_left {
+    display: flex;
+    align-items: end;
+}
+
+.header_inner .header_left .main_logo {
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.header_inner .header_left .main_logo p {
+    color: rgb(10, 10, 10);
+}
+
+.header_inner .header_left .main_logo p:first-child {
+    font-size: 30px;
+}
+
+.header_inner .header_left .main_logo p:last-child {
+    font-size: 12px;
+}
+
+.header_inner .header_left .lnb {
+    padding-left: 45px;
+}
+
+.header_inner .header_left .lnb ul {
+    display: flex;
+    font-size: 20px;
+}
+
+.header_inner .header_left .lnb ul li {
+    margin-right: 80px;
+}
+
+.header_inner .header_left .lnb .lnb_title {
+    color: rgb(0, 0, 0);
+    position: relative;
+    padding-bottom: 14px;
+}
+
+.header_inner .header_left .lnb .lnb_title::after {
+    content: '';
+    position: absolute;
+    background-color: rgb(25, 31, 19);
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    left: 50%;
+    transition: 0.3s;
+    transform: translateX(-50%);
+}
+
+.header_inner .header_left .lnb .lnb_title:hover::after {
+    width: 100%;
+}
+
+.header_inner .header_left .lnb .lnb_dep2 {
+    font-family: 'KOTRA_GOTHIC';
+    position: absolute;
+    top: 80px;
+    opacity: 0;
+    visibility: hidden;
+    padding: 25px 0;
+}
+
+.header_inner .header_left .lnb .lnb_dep2 li {
+    float: left;
+    margin-right: 50px;
+}
+
+.header_inner .header_left .lnb .lnb_dep2 li a {
+    position: relative;
+    font-size: 16px;
+}
+
+.header_inner .header_left .lnb ul li:hover .lnb_dep2 {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.5s;
+}
+
+.header_inner .header_left .lnb .lnb_dep2 li a::after {
+    content: '';
+    position: absolute;
+    background-color: black;
+    width: 4px;
+    height: 4px;
+    border-radius: 50px;
+    top: -5px;
+    right: -5px;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.header_inner .header_left .lnb .lnb_dep2 li a:hover::after {
+    opacity: 1;
+}
+.header_inner .gnb {
+    width: 140px;
+}
+
+.header_inner .gnb a {
+    float: left;
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-right: 25px;
+}
+
+.header_inner .gnb .cart {
+    margin-right: 0;
+}
+
+.header_inner .gnb a img {
+    width: 100%;
+    height: 100%;
+}
+
+/* header(search_box) */
+.search_box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fcf9ee;
+    width: 100%;
+    height: 400px;
+    padding: 0 45px;
+    box-sizing: border-box;
+    border-bottom: 2px solid #000;
+    display: none;
+    visibility: hidden;
+    animation: slidefade 0.3s linear;
+}
+
+
+@keyframes slidefade {
+    0% {
+        opacity: 0;
+        margin-top: -50px;
+    }
+
+    100% {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+.search_box.active {
+    display: block;
+    visibility: visible;
+}
+
+.search_box .search_box_inner {
+    width: 100%;
+    height: 100%;
+}
+
+.search_box .search_box_inner .search_logo {
+    width: 200px;
+    text-align: center;
+    padding: 13px 0;
+}
+
+.search_box .search_box_inner .search_logo p:first-child {
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+.search_box .search_box_inner .search_logo p:last-child {
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.search_box .search_box_inner .search_close {
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+    float: right;
+    margin-top: -60px;
+    margin-right: 25px;
+    cursor: pointer;
+}
+
+.search_box .search_box_inner .search_close img {
+    width: 100%;
+    height: 100%;
+}
+
+.search_box .search_box_inner .search_bar {
+    position: relative;
+    width: 700px;
+    height: 50px;
+    margin: 0 auto;
+    margin-top: 55px;
+}
+
+.search_box .search_box_inner .search_bar input {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #000;
+    margin: 0 auto;
+}
+
+.search_box .search_box_inner .search_bar input::placeholder {
+    font-family: 'KOTRA_GOTHIC';
+    color: black;
+    font-size: 15px;
+    float: right;
+    margin-right: 50px;
+}
+
+.search_box .search_box_inner .search_bar input:focus::placeholder {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.search_box .search_box_inner .search_bar .search_bar_icon {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    width: 25px;
+    height: 25px;
+}
+
+.search_box .search_box_inner .search_bar .search_bar_icon img {
+    width: 100%;
+    height: 100%;
+}
+
+.search_box .search_box_inner ul {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 145px;
+}
+
+.search_box .search_box_inner ul li {
+    padding: 0 40px;
+    line-height: 30px;
+    background-color: rgba(255, 255, 255, 0.685);
+    border: 1px solid #4444447c;
+    box-sizing: border-box;
+    color: black;
+}
+
+.search_box .search_box_inner ul li a {
+    font-family: 'KOTRA_GOTHIC';
+    width: 100%;
+}
+
+.search_box .search_box_inner ul li:hover {
+    background-color: rgba(0, 0, 0, 0.884);
+    transition: all 0.3s;
+}
+
+.search_box .search_box_inner ul li:hover a {
+    color: white;
+    transition: all 0.3s;
+}
+
+/* DETAILTOP */
+.detail {
+    width: 1235px;
+    margin: 0 auto;
+    font-family: 'Bookk Myungjo';
+    box-sizing: border-box;
+    margin-top: 200px;
+}
+
+.detail .web_map {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    height: 20px;
+}
+
+.detail .web_map i {
+    font-size: 12px;
+    padding: 0 5px;
+    margin-top: 3px;
+}
+
+.detail .section_inner {
+    margin: 0 auto;
+    width: 1235px;
+    height: 620px;
+    background-color: rgba(255, 255, 255, 0.452);
+}
+
+.detail .detail_inner {
+    display: flex;
+}
+
+/* detail(Swiper) */
+.detail_inner .detail_swiper {
+    width: 750px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.detail_inner .detail_swiper .gallery-top {
+    position: relative;
+    height: 450px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.detail_inner .detail_swiper .gallery-top .swiper-slide {
+    width: 100%;
+    height: 100%;
+}
+
+.detail_inner .detail_swiper .gallery-top .swiper-slide img {
+    width: 450px;
+    height: 450px;
+    filter: drop-shadow(7px 6px 3px #0000006c);
+    margin-left: 145px;
+}
+
+.gallery-top .swiper-slide button {
+    font-family: 'Bookk Myungjo';
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 17px;
+    border-radius: 10px;
+    width: 200px;
+    padding: 9px 0;
+    position: absolute;
+    left: 155px;
+    bottom: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.521);
+    opacity: 0;
+    transform: translateY(20%);
+}
+
+.detail_inner .detail_swiper .gallery-thumbs {
+    padding: 20px 10px 30px;
+    box-sizing: border-box;
+
+}
+
+.detail_inner .detail_swiper .gallery-thumbs .swiper-slide {
+    background-color: #dddddd3d;
+    width: 130px;
+    height: 120px;
+    cursor: pointer;
+}
+
+.gallery-thumbs .swiper-slide img {
+    width: 100%;
+    height: 100%;
+}
+
+.detail_inner .detail_swiper .gallery-thumbs .swiper-slide-thumb-active {
+    opacity: 1;
+    filter: drop-shadow(3px 3px 0px #0000006c);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    display: none;
+}
+
+.swiper-button-white {
+    margin-top: 5px;
+    width: 32px;
+    color: rgba(0, 0, 0, 0.527);
+}
+
+/* DETAIL_BANNER */
+.detail .detail_inner .detail_banner {
+    width: 485px;
+}
+
+.detail .detail_inner .detail_banner .banner_inner {
+    width: 440px;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 85px;
+    box-sizing: border-box;
+}
+
+.detail .detail_inner .detail_banner .banner_inner p:first-child {
+    padding-top: 160px;
+    font-weight: bold;
+}
+
+.detail .detail_inner .detail_banner .banner_inner p:nth-child(2) {
+    margin-top: 35px;
+    font-weight: bold;
+}
+
+.detail_banner .banner_inner p:nth-child(3) {
+    margin-top: 15px;
+    font-family: 'KOTRA_GOTHIC';
+}
+
+.detail_banner .banner_inner p:nth-child(4) {
+    margin-top: 35px;
+}
+
+.detail_banner .banner_inner p:nth-child(5) {
+    margin-top: 35px;
+    font-size: 12px;
+    font-family: 'KOTRA_GOTHIC';
+}
+
+.detail_banner .banner_inner p:nth-child(6) {
+    margin-top: 10px;
+    font-size: 12px;
+    font-family: 'KOTRA_GOTHIC';
+}
+
+/* DETAIL(SELECT) */
+.select {
+    position: relative;
+}
+
+.select .option-list {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+}
+
+.select.active .option-list {
+    max-height: none;
+    opacity: 1;
+}
+
+.select {
+    cursor: pointer;
+    width: 440px;
+    margin-left: -85px;
+    margin-top: 20px;
+}
+
+.select .select_main {
+    border: 1px solid black;
+    box-sizing: border-box;
+    top: -124px;
+    height: 50px;
+    line-height: 50px;
+    width: 100%;
+    text-align: left;
+    padding-left: 15px;
+}
+
+.select .select_main:hover {
+    background-color: black;
+    color: white;
+    transition: all 0.3s;
+}
+
+.select .option-list {
+    border: 1px solid black;
+    border-bottom: 0;
+}
+
+.select .option-list .option {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #000;
+    background-color: white;
+    transition: all 0.3s;
+}
+
+.select .option-list .option:last-child {
+    border-bottom: none;
+}
+
+.select .option-list .option:hover {
+    background-color: black;
+    color: white;
+}
+
+/* DETAIL(BUTTON) */
+.detail_button {
+    width: 440px;
+    margin-left: -85px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.detail_button a {
+    display: inline-block;
+    width: 210px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    box-sizing: border-box;
+}
+
+.detail_button a:first-child {
+    border: 1px solid black;
+    transition: all 0.3s;
+}
+
+.detail_button a:first-child:hover {
+    background-color: black;
+    color: white;
+    transition: all 0.3s;
+}
+
+.detail_button a:last-child {
+    background-color: #000000d2;
+    color: rgba(255, 255, 255, 0.801);
+}
+
+.detail_button a:last-child:hover {
+    background-color: #000000;
+    color: rgba(255, 255, 255, 0.979);
+}
+
+/* CART_MODAL */
+.detail .detail_inner .cart_modal {
+    position: fixed;
+    z-index: 99999;
+    width: 500px;
+    height: 100vh;
+    background-color: #ffffff;
+    top: 0;
+    right: 0;
+    padding: 15px;
+    box-sizing: border-box;
+    animation: slideright 0.3s linear;
+    display: none;
+}
+
+@keyframes slideright {
+    0% {
+        opacity: 0;
+        margin-right: -100px;
+    }
+
+    100% {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+.detail .detail_inner .cart_modal.active {
+    display: block;
+}
+
+.detail .detail_inner .cart_modal .cart_modal_inner {
+    border: 2px solid black;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.cart_modal .cart_modal_inner .cart_modal_close {
+    width: 35px;
+    height: 35px;
+    float: right;
+    cursor: pointer;
+}
+
+.cart_modal .cart_modal_inner .cart_modal_close img {
+    width: 100%;
+    height: 100%;
+}
+
+.cart_modal .cart_modal_inner .inform_txt {
+    font-family: 'KOTRA_GOTHIC';
+    border: 1px solid white;
+    text-align: center;
+    margin-top: 330px;
+}
+
+.cart_modal .cart_modal_inner .cart_contents {
+    display: flex;
+    padding: 0 65px;
+    margin-top: 70px;
+    box-sizing: border-box;
+}
+
+.cart_modal .cart_modal_inner .cart_contents_left {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+.cart_modal .cart_modal_inner .cart_contents_left .img {
+    width: 110px;
+    height: 180px;
+    background-color: #dddddd3d;
+}
+
+.cart_modal .cart_modal_inner .cart_contents_left .img img {
+    width: 120%;
+    height: 90%;
+    margin-left: -10px;
+    margin-top: 10px;
+}
+
+.cart_modal .cart_modal_inner .cart_contents_left .cart_number {
+    border: 1px solid #dddddd8e;
+    width: 110px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.cart_contents_left .cart_number input {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.cart_modal .cart_modal_inner .cart_contents_right {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart_contents_right .txt {
+    width: 200px;
+    height: 180px;
+    text-align: center;
+    line-height: 25px;
+}
+
+.cart_contents_right .txt p:first-child {
+    margin-top: 55px;
+}
+
+.cart_contents_right .txt p:nth-child(2) {
+    font-family: 'KOTRA_GOTHIC';
+}
+
+.cart_contents_right .txt p:nth-child(3) {
+    margin-top: 10px;
+}
+
+.cart_contents_right .price {
+    width: 200px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.cart_modal .cart_modal_inner .modal_button {
+    margin-top: 60px;
+}
+
+.cart_modal .cart_modal_inner .modal_button a {
+    font-family: 'KOTRA_GOTHIC';
+    display: block;
+    width: 330px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    margin: 0 auto;
+    transition: all 0.3s;
+}
+
+.cart_modal .cart_modal_inner .modal_button a:first-child {
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.modal_button a:first-child:hover {
+    background-color: black;
+    color: white;
+}
+
+.cart_modal .cart_modal_inner .modal_button a:last-child {
+    background-color: rgb(0, 0, 0);
+    color: rgba(255, 255, 255, 0.815);
+    margin-top: 10px;
+}
+
+/* ARCODIAN */
+.arcodian {
+    width: 1080px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+
+.title {
+    font-family: 'KOTRA_GOTHIC';
+    position: relative;
+    cursor: pointer;
+    padding: 40px 0;
+    font-size: 14px;
+    border-top: 1px solid black;
+}
+
+.title:nth-child(5) {
+    border-bottom: 1px solid black;
+}
+
+.title::before {
+    display: inline-block;
+    content: 'Q.';
+    font-size: 14px;
+    color: #1d1d1d;
+    margin: 0 5px 0 35px;
+}
+
+.anw {
+    display: none;
+    overflow: hidden;
+    background-color: #fcf9ee;
+    font-size: 14px;
+}
+
+.arrow-wrap {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translate(0, -50%);
+}
+
+.arrow-wrap span {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.63);
+    height: 2px;
+    width: 18px;
+}
+
+.arrow-wrap span:last-child {
+    transform: rotate(90deg);
+    transition: all 0.3s;
+}
+
+.title.on span:last-child {
+    transform: rotate(0);
+}
+
+/* ARCODIAN(anw)*/
+
+.arcodian .note_inner .note_img {
+    box-sizing: border-box;
+    width: 340px;
+    height: 260px;
+}
+
+.arcodian .note_inner .note_img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+}
+
+.arcodian .note_inner .first .note_img {
+    background-image: url(./detail_images/detail_scent01.png);
+}
+
+.arcodian .note_inner .second .note_img {
+    background-image: url(./detail_images/detail_scent02.png);
+}
+
+.arcodian .note_inner .third .note_img {
+    background-image: url(./detail_images/detail_scent03.png);
+}
+
+.arcodian .note_inner {
+    display: flex;
+    width: 1080px;
+    margin: 0 auto;
+}
+
+.arcodian .note_inner .note {
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+}
+
+.arcodian .note_inner .note:last-child {
+    margin-right: 0;
+}
+
+.arcodian .note_inner .note .note_txt {
+    width: 340px;
+    text-align: center;
+
+}
+
+.arcodian .note_inner .note .note_txt p:first-child {
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+}
+
+.arcodian .note_inner .note .note_txt p:last-child {
+    font-size: 12px;
+    height: 95px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.arcodian .note_inner .second .note_img {
+    background-position-x: 85px;
+    background-position-y: 10px;
+}
+
+.arcodian .anw_ingrediant .inner {
+    padding: 50px;
+    text-align: center;
+}
+
+/* ARCODIAN(RIVIEW) */
+
+.arcodian .anw_review .inner {
+    font-family: 'KOTRA_GOTHIC';
+    width: 100%;
+    padding: 40px 0 80px;
+}
+
+.anw_review .inner .swiper_left .star {
+    background-color: white;
+    width: 130px;
+    height: 80px;
+    text-align: center;
+    padding: 17px 10px 0;
+    box-sizing: border-box;
+}
+
+.anw_review .inner .swiper_wrap {
+    display: flex;
+}
+
+.anw_review .inner .swiper_left .star .star_img img {
+    width: 18px;
+    height: 18px;
+}
+
+.anw_review .inner .swiper_left .star .star_txt {
+    margin-top: 5px;
+}
+
+.anw_review .inner .swiper_left button {
+    margin-top: 10px;
+    width: 130px;
+    padding: 20px 0;
+    border: none;
+    background-color: white;
+}
+
+#review {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.911);
+    width: 1000px;
+    margin-left: 10px;
+}
+
+#review #review-wrapper {
+    width: 900px;
+    margin: 0 auto;
+}
+
+#review .swiper-slide .img {
+    width: 150px;
+    height: 150px;
+}
+
+#review .swiper-slide .img img {
+    width: 100%;
+    height: 100%;
+}
+
+#review .review-arrows {
+    position: absolute;
+    width: 10px;
+    height: 20px;
+    color: black;
+    top: 85px;
+}
+
+#review .review-arrows::after,
+#review .review-arrows::before {
+    display: none;
+}
+
+#review .swiper-button-prev {
+    left: 5px;
+}
+
+#review .swiper-button-next {
+    right: 5px;
+}
+
+.review_list {
+    margin: 50px 0 80px;
+    display: flex;
+}
+
+.review_list .list {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.review_list .list:last-child {
+    margin-right: 0;
+}
+
+.review_list .list .star {
+    height: 40px;
+    line-height: 50px;
+}
+
+.review_list .list .star img {
+    width: 15px;
+    height: 15px;
+}
+
+.review_list .list p:nth-child(2){
+    height: 30px;
+    line-height: 30px;
+}
+.review_list .list p:nth-child(3){
+    height: 40px;
+    line-height: 40px;
+}
+.review_list .list p:nth-child(4){
+    height: 85px;
+    padding-top: 15px;
+    box-sizing: border-box;
+}
+
+/* RECOMMAND */
+.recommand {
+    width: 1080px;
+    margin: 0 auto;
+}
+
+.recommand .recommand_title {
+    padding: 40px 0 40px 35px;
+    font-family: 'KOTRA_GOTHIC';
+}
+
+.recommand .recommand_contents {
+    display: flex;
+}
+
+.recommand .content {
+    width: 256px;
+    height: 417px;
+    margin-right: 20px;
+    padding-top: 20px;
+    background-color: white;
+    cursor: pointer;
+    position: relative;
+}
+
+.recommand .content:hover .content_img {
+    /* background-size: 110%; */
+    opacity: 0.3;
+    background-position-x: -190px;
+}
+
+.recommand .content:last-child {
+    margin-right: 0;
+}
+
+.recommand .content_img {
+    width: 210px;
+    height: 225px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    transition: all 0.7s;
+}
+
+.recommand .content:first-child .content_img {
+    background-image: url(./detail_images/detail_recommend01.png);
+}
+
+.recommand .content:nth-child(2) .content_img {
+    background-image: url(./detail_images/detail_recommend02.png);
+}
+
+.recommand .content:nth-child(3) .content_img {
+    background-image: url(./detail_images/detail_recommend03.png);
+}
+
+.recommand .content:last-child .content_img {
+    background-image: url(./detail_images/detail_recommend04.png);
+    background-size: 90%;
+}
+
+.recommand .content a {
+    display: inline-block;
+    border: 1px solid rgba(0, 0, 0, 0.205);
+    box-sizing: border-box;
+    text-align: center;
+    background-color: white;
+    padding: 5px 0;
+    border-radius: 50px;
+    width: 165px;
+    font-size: 20px;
+    position: absolute;
+    bottom: 270px;
+    left: -50px;
+    opacity: 0;
+    transition: all 0.7s;
+}
+
+.recommand .content a:hover {
+    background-color: black;
+    color: white;
+}
+
+.recommand .content:hover a {
+    opacity: 1;
+    left: 45px;
+}
+
+.recommand .content_txt {
+    text-align: center;
+}
+
+.recommand .content_txt {
+    margin-top: 30px;
+}
+
+.recommand .content_txt p {
+    padding: 10px 0;
+}
+
+.recommand .content_txt p:nth-child(2) {
+    font-family: 'KOTRA_GOTHIC';
+}
+
+.recommand .content_txt .txt_price {
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.recommand .content_txt .txt_price span {
+    font-size: 14px;
+}
+
+/* SNS */
+#sns {
+    position: relative;
+    width: 1300px;
+    height: 280px;
+    background-color: rgb(253, 253, 253);
+    margin: 0 auto;
+    margin-top: 150px;
+    overflow: hidden;
+}
+
+#sns-wrapper .swiper-slide {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    cursor: pointer;
+}
+
+#sns-wrapper .swiper-slide .img {
+    width: 100%;
+    height: 100%;
+}
+
+#sns-wrapper .swiper-slide img {
+    width: 100%;
+    height: 100%;
+}
+
+#sns-wrapper .swiper-slide .sns_cart {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    right: 10px;
+    top: 10px;
+    border: 2px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#sns-wrapper .swiper-slide .sns_cart img {
+    width: 100%;
+    height: 1005;
+}
+
+#sns-wrapper .swiper-slide .sns_txt {
+    font-family: 'Bookk Myungjo';
+    background-color: rgba(41, 41, 41, 0.199);
+    position: absolute;
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    text-align: center;
+    box-sizing: border-box;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    color: white;
+    transition: all 0.5s;
+}
+
+#sns-wrapper .swiper-slide:hover .sns_txt {
+    height: 70px;
+}
+
+#sns-wrapper .swiper-slide .sns_txt p {
+    margin-top: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#sns-wrapper .swiper-slide .sns_txt p:last-child {
+    font-size: 14px;
+}
+
+#sns .sns-arrows {
+    position: absolute;
+    height: 280px;
+    width: 80px;
+    top: 22px;
+    background-image: none;
+    background-color: rgba(255, 255, 255, 0.63);
+}
+
+#sns .sns-arrows::after,
+#sns .sns-arrows::before {
+    display: block;
+    color: rgba(0, 0, 0, 0.199);
+}
+
+#sns .swiper-button-prev {
+    left: 0;
+}
+
+#sns .swiper-button-next {
+    right: 0;
+}
+
+
+/* FOOTER */
+footer {
+    font-family: 'KOTRA_GOTHIC';
+    width: 100%;
+    height: 350px;
+    margin: 0 auto;
+    margin-top: 150px;
+    background-color: #444;
+    padding: 25px;
+    box-sizing: border-box;
+    color: #ddd;
+    font-size: 12px;
+}
+
+footer .footer_inner {
+    border: 2px solid #ddd;
+    width: 100%;
+    height: 100%;
+    padding: 35px 115px;
+    box-sizing: border-box;
+}
+
+footer .footer_inner .footer_contents {
+    height: 100%;
+    position: relative;
+}
+
+.footer_inner .footer_top input {
+    display: none;
+}
+
+.footer_inner .footer_top label {
+    margin-right: 30px;
+}
+
+.footer_inner .footer_top .slide-down {
+    display: none;
+    position: absolute;
+    border: 2px solid #ddd;
+    width: 100px;
+    padding: 5px;
+    background-color: #444;
+}
+
+.footer_inner .footer_top .slide-down a {
+    color: #ddd;
+}
+
+.footer_inner .footer_top .company_slide_down {
+    left: 85px;
+}
+
+.footer_inner .footer_top .social_slide_down {
+    left: 165px;
+}
+
+input[id="customerservice"]:checked~.customer_slide_down {
+    display: block;
+}
+
+input[id="company"]:checked~.company_slide_down {
+    display: block;
+}
+
+input[id="social"]:checked~.social_slide_down {
+    display: block;
+}
+
+.footer_inner .footer_txt {
+    margin-top: 30px;
+}
+
+.footer_inner .footer_txt .business {
+    display: flex;
+    margin-top: 10px;
+}
+
+.footer_inner .footer_txt .business p {
+    margin-right: 30px;
+}
+
+.footer_inner .footer_txt .business p:last-child {
+    border-bottom: 1px solid #ddd;
+}
+
+.footer_inner .footer_txt .csteam {
+    display: flex;
+    margin: 10px 0;
+}
+
+.footer_inner .footer_txt .csteam p {
+    margin-right: 30px;
+}
+
+.footer_inner .footer_txt .c {
+    margin-top: 40px;
+}
+
+.footer_inner .footer_right {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.footer_inner .footer_right .online_mall {
+    text-align: center;
+    width: 140px;
+}
+
+.footer_inner .footer_right .online_mall .online_mall_sticker {
+    border: 1px solid #ddd;
+    width: 140px;
+    height: 60px;
+}
+
+.online_mall_sticker .online_mall_title {
+    font-family: 'Bookk Myungjo';
+    border-bottom: 1px solid #ddd;
+    padding: 5px 0;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.online_mall_sticker .en {
+    font-family: 'Bookk Myungjo';
+    font-size: 2px;
+}
+
+.footer_inner .footer_right .sns {
+    font-size: 25px;
+    width: 200px;
+    position: absolute;
+    top: 120px;
+}
+
+.footer_inner .footer_right .sns a {
+    color: #ddd;
+    background-color: #615f5f;
+    display: inline-block;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    line-height: 45px;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+.footer_inner .footer_right .sns a:hover {
+    background-color: #838383;
+    transition: all 0.3s;
+    color: white;
+}
+
+
+/* BTN_TOP */
+.btn_top {
+    font-family: 'Bookk Myungjo';
+    position: fixed;
+    right: 80px;
+    bottom: 60px;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    line-height: 55px;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.6s;
+    border-radius: 50%;
+}
+
+.btn_top.active {
+    transform: translateY(0);
+    opacity: 1;
+}
