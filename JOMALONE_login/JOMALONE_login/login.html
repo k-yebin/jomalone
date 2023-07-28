@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jomalone_login</title>
+    <!-- 폰트어썸연결 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <script src="./js/main.js" defer></script>
+    <!-- 제이쿼리 연결 -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- css 연결 -->
+    <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="./font/stylesheet.css">
+</head>
+
+<body>
+    <ul class="top_banner">
+        <li>
+            <a href="#">
+                * 모든 구매 시 원하는 샘플 2종을 직접 선택하여 센트 페어링을 경험해 보세요.
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                * 하일랜드 리미티드 컬렉션 제품 2개 이상 구매 시, 리미티드 스퀘어 박스 포장 서비스를 제공해 드립니다.
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                * 모든 구매 고객님께 리미티드 센트를 먼저 경험해 보실 수 있는 리쿼터치 센티드 카드를 선물로 드립니다.
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                * 첫 구매 시 피오니 앤 블러쉬 스웨이드 코롱 9ML를 선물로 드립니다. (쿠폰코드:WELCOME)
+            </a>
+        </li>
+    </ul>
+    <section class="login">
+        <div class="login_title">
+            <video src="./images/visualmain.mp4" muted loop autoplay></video>
+            <div class="title_txt">
+                <P class="title">
+                    MEMBERSHIP LOGIN
+                </P>
+                <div class="sub_title">
+                    <SPAN>JOMALONE LONDON</SPAN>이 제안하는 당신만의 향을 만나보세요.
+                </div>
+            </div>
+        </div><!-- login_title -->
+        <div class="map">
+            <a href="/index.html">Home</a>
+            <i class="fas fa-angle-right"></i>
+            <a href="./login.html">login</a>
+        </div>
+        <div class="login_wrap">
+            <div class="select">
+                <div class="select_btn">
+                    <a class="login-modal" onclick="openModal()">로그인</a>
+                    <a href="../JOMALONE_terms/terms.html">회원가입</a>
+                </div>
+                <form>
+                    <input type="checkbox" id="chk" checked>
+                    <label for="chk">아이디 기억하기</label>
+                    <a href="#none" class="btn-forgot" onclick="openFind()">아이디/비밀번호 찾기</a>
+                </form>
+            </div>
+            <span class="or-text">OR</span>
+            <div class="sns">
+                <p class="sns_title">
+                    sns로 로그인하기
+                </p>
+                <div class="sns_icon">
+                    <div>
+                        <a href="#none">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <span>twitter</span>
+                    </div>
+                    <div>
+                        <a href="#none">
+                            <i class="fab fa-google-plus-g"></i>
+                        </a>
+                        <span>google</span>
+                    </div>
+                    <div>
+                        <a href="#none">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <span>instagram</span>
+                    </div>
+                </div>
+            </div><!-- sns -->
+        </div><!-- login_wrap -->
+        <div class="find_scent">
+            <P>Find a scent that suites you.</P>
+            <p>Please Login</p>
+        </div>
+        <div id="login-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-content_inner">
+                    <div class="content_left">
+                        <a class="btn-close" onclick="closeModal()">x</a>
+                        <div class="modal-body">
+                            <p class="title">WELCOME TO JOMALONE</p>
+                            <div class="input_bar">
+                                <p>아이디</p>
+                                <input id="user_id" type="id" placeholder="아이디를 입력해주세요">
+                                <span class="error_box"></span>
+                                <p>비밀번호</p>
+                                <input id="user_pw" type="password" placeholder="비밀번호를 입력해주세요">
+                                <span class="error_box"></span>
+                            </div>
+                            <a class="modal_btn" onclick="check()">로그인</a>
+                        </div>
+                    </div>
+                    <div class="content_right">
+                    </div>
+                </div>
+            </div><!-- modal-content -->
+        </div><!-- log-in modal -->
+        <div id="find-modal" class="modal">
+            <div class="modal-content">
+                <div class="id">
+                    <div class="id_title">
+                        <h3>아이디 찾기</h3>
+                        <p class="sub">본인인증을 통해 아이디를 찾을 수 있습니다.</p>
+                    </div>
+                    <div class="inner">
+                        <input type="radio" name="tabmenu" id="tab1" checked>
+                        <label class="label" for="tab1">전화번호로 인증하기</label>
+                        <input type="radio" name="tabmenu" id="tab2">
+                        <label class="label" for="tab2">이메일로 인증하기</label>
+                        <!-- 전화번호인증 -->
+                        <div class="content slide1">
+                            <form>
+                                <div>
+                                    <span class="title">이름</span>
+                                    <input type="name" placeholder="이름을 입력해주세요.">
+                                    <span class="error_next_box"></span>
+                                </div>
+                                <div>
+                                    <span class="title">전화번호</span>
+                                    <input type="name" id="phoneNum" placeholder="010-0000-0000">
+                                    <button type="button" id="transmitBtn">인증번호전송</button>
+                                    <span class="error_next_box"></span>
+                                </div>
+                                <div>
+                                    <span class="title">인증번호입력</span>
+                                    <input type="name" placeholder="인증번호를 입력해주세요">
+                                    <span class="error_next_box"></span>
+                                </div>
+                            </form>
+                            <a class="find-btn" href="#none">아이디찾기</a>
+                        </div><!-- content slide1 -->
+                        <!-- 이메일인증 -->
+                        <div class="content slide2">
+                            <form>
+                                <div>
+                                    <span class="title">이름</span>
+                                    <input type="name" placeholder="이름을 입력해주세요.">
+                                    <span class="error_next_box"></span>
+                                </div>
+                                <div class="email_wrap">
+                                    <span class="title">이메일</span>
+                                    <div class="email_code">
+                                        <input type="name" id="email" class="int" maxlength="100"
+                                            placeholder=""><span>@</span>
+                                        <input type="name" id="email_add" class="int">
+                                        <select name="email_sel" id="email_sel" class="sel" onchange="change_email();">
+                                            <option value="">직접입력</option>
+                                            <option value="naver.com">naver</option>
+                                            <option value="daum.com">daum</option>
+                                            <option value="google.com">google</option>
+                                            <option value="gmail.com">gmail</option>
+                                            <option value="nate.com">nate</option>
+                                        </select>
+                                    </div>
+                                    <a class="email-btn" href="#none">인증번호전송</a>
+                                </div>
+                                <div>
+                                    <span class="title">인증번호입력</span>
+                                    <input type="name" placeholder="인증번호를 입력해주세요">
+                                    <span class="error_next_box"></span>
+                                </div>
+                            </form>
+                            <a class="find-btn" href="#none">이메일 찾기</a>
+                        </div><!-- content slide2 -->
+                    </div><!-- inner -->
+                </div><!-- id -->
+                <!-- 비밀번호찾기 -->
+                <div class="pw">
+                    <div class="pw_title">
+                        <h3>비밀번호 찾기</h3>
+                        <p class="sub">아이디와 이름을 통해 비밀번호를 찾을 수 있습니다.</p>
+                    </div>
+                    <div class="inner">
+                        <form>
+                            <div>
+                                <span class="title">이름</span>
+                                <input type="name" id="userName" placeholder="이름을 입력해주세요.">
+                                <span class="error_next_box"></span>
+                            </div>
+                            <div>
+                                <span class="title">아이디</span>
+                                <input type="name" id="useId" placeholder="아이디를 입력해주세요.">
+                                <span class="error_next_box"></span>
+                            </div>
+                        </form>
+                        <a class="find-btn" href="#none">비밀번호 찾기</a>
+                    </div>
+                </div>
+                <button id="findBtn" onclick="closeFind()">X</button>
+            </div><!-- modal-content -->
+        </div><!-- log-in modal -->
+    </section><!-- login -->
+
+
+    <script>
+        //로그인 모달창 띄우기
+        let modal = document.getElementById('login-modal')
+        //'아이디'를 가져와서 변수에 넣음
+        function openModal() {
+            modal.classList.add('active')
+        }
+
+        function closeModal() {
+            modal.classList.remove('active')
+        }
+
+        //파인드 모달창 띄우기
+        let find = document.getElementById('find-modal')
+
+        function openFind() {
+            find.classList.add('active')
+        }
+
+        function closeFind() {
+            find.classList.remove('active')
+        }
+
+        //아이디 모달창(content)
+        var id = document.querySelector('#user_id');
+        var pw = document.querySelector('#user_pw');
+        var error = document.querySelectorAll('.error_box');
+
+        id.addEventListener("focusout", checkId);
+        pw.addEventListener("focusout", checkPw);
+
+        function checkId() {
+            if (id.value === "") {
+                error[0].innerHTML = "아이디를 입력해주세요.";
+                error[0].style.display = "block";
+                error[0].style.color = "red";
+                return false;
+            } else {
+                error[0].style.display = "none";
+                return true;
+            }
+        }
+
+        function checkPw() {
+            if (pw.value === "") {
+                error[1].innerHTML = "비밀번호를 입력해주세요.";
+                error[1].style.display = "block";
+                error[1].style.color = "red";
+                return false;
+            } else {
+                error[1].style.display = "none";
+                return true;
+            }
+        }
+
+        function check() {
+            if (!(checkId())) {
+                id.focus();
+                return false;
+            }
+            if (!(checkPw())) {
+                pw.focus();
+                return false;
+            } else {
+                location.href = '../JOMALONE_main/main.html';
+            }
+        }
+
+        //파인드 모달창(content)
+        function change_email() {
+            var email_add = document.getElementById("email_add");
+            var email_sel = document.getElementById("email_sel");
+
+            //지금 골라진 옵션의 순서와 값 구하기
+            var idx = email_sel.options.selectedIndex;
+            var val = email_sel.options[idx].value;
+
+            email_add.value = val;
+        }
+
+
+        //전화번호 입력 시 하이픈 자동생성
+        var autoHypenPhone = function (str) {
+            str = str.replace(/[^0-9]/g, '');
+            var tmp = '';
+            if (str.length < 4) {
+                return str;
+            } else if (str.length < 7) {
+                tmp += str.substr(0, 3);
+                tmp += '-';
+                tmp += str.substr(3);
+                return tmp;
+            } else if (str.length < 11) {
+                tmp += str.substr(0, 3);
+                tmp += '-';
+                tmp += str.substr(3, 3);
+                tmp += '-';
+                tmp += str.substr(6);
+                return tmp;
+            } else {
+                tmp += str.substr(0, 3);
+                tmp += '-';
+                tmp += str.substr(3, 4);
+                tmp += '-';
+                tmp += str.substr(7);
+                return tmp;
+            }
+
+            return str;
+        }
+
+        var phoneNum = document.getElementById('phoneNum');
+
+        phoneNum.onkeyup = function () {
+            console.log(this.value);
+            this.value = autoHypenPhone(this.value);
+        }
+
+
+        /*  var userName = document.querySelector('#userId');
+         var userName = document.querySelector('#userName'); */
+    </script>
+</body>
+
+</html>

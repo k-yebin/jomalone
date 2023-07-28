@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>cologne</title>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<!-- JS -->
+	<script src="./js/jquery-3.6.4.min.js"></script>
+	<script src="./js/jquery.scrollTo.min.js"></script>
+	<script src="./js/jquery.easing.min.js"></script>
+	<script src="./js/jquery.mousewheel.min.js"></script>
+	<script type="module" src="./js/cologne.js" defer></script>
+	<!-- swiper -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+	<!-- FONTAWESOME-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" />
+	<!-- CSS -->
+	<link rel="stylesheet" href="./cologne.css">
+	<link rel="stylesheet" href="./font/stylesheet.css">
+</head>
+
+<body>
+	<div class="header_wrap active">
+		<ul class="top_banner">
+			<li>
+				<a href="#">
+					* 모든 구매 시 원하는 샘플 2종을 직접 선택하여 센트 페어링을 경험해 보세요.
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					* 하일랜드 리미티드 컬렉션 제품 2개 이상 구매 시, 리미티드 스퀘어 박스 포장 서비스를 제공해 드립니다.
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					* 모든 구매 고객님께 리미티드 센트를 먼저 경험해 보실 수 있는 리쿼터치 센티드 카드를 선물로 드립니다.
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					* 첫 구매 시 피오니 앤 블러쉬 스웨이드 코롱 9ML를 선물로 드립니다. (쿠폰코드:WELCOME)
+				</a>
+			</li>
+		</ul>
+		<header class="active">
+			<div class="header_inner">
+				<div class="header_left">
+					<div class="main_logo">
+						<a href="../index.html">
+							<p>JO MALONE</p>
+							<p>LONDON</p>
+						</a>
+					</div>
+					<div class="lnb">
+						<ul>
+							<li>
+								<a href="/sub(best)/best.html" class="lnb_title">new</a>
+								<ul class="lnb_dep2">
+									<li>
+										<a href="/sub(best)/best.html">블랙엔베리를 기념하며</a>
+									</li>
+									<li>
+										<a href="/sub(best)/best.html">블라썸 컬렉션</a>
+									</li>
+									<li>
+										<a href="/sub(best)/best.html">리틀 럭셔리</a>
+									</li>
+									<li>
+										<a href="/sub(best)/best.html">셀러브레이팅 더로즈</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="/sub(best)/best.html" class="lnb_title">scent</a>
+								<ul class="lnb_dep2">
+									<li>
+										<a href="/sub(best)/best.html">시트러스</a>
+									</li>
+									<li>
+										<a href="/sub(best)/best.html">프루티</a>
+									</li>
+									<li>
+										<a href="/sub(best)/best.html">라이트 플로랄</a>
+									</li>
+									<li>
+										<a href="/sub(best)/best.html">플로랄</a>
+									</li>
+									<li>
+										<a href="/sub(best)/best.html">스파이시</a>
+									</li>
+									<li>
+										<a href="/sub(best)/best.html">우디</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="/sub(best)/best.html" class="lnb_title">shop</a>
+								<ul class="lnb_dep2">
+									<li>
+										<a href="/sub(best)/best.html">코롱</a>
+									</li>
+									<li>
+										<a href="/sub(best)/best.html">배스 앤 바디</a>
+									</li>
+									<li>
+										<a href="/sub(best)/best.html">홈 프레그런스</a>
+									</li>
+									<li>
+										<a href="/sub(best)/best.html">선물하기</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="/sub(best)/best.html" class="lnb_title">about</a>
+								<ul class="lnb_dep2">
+									<li>
+										<a href="/sub(best)/best.html">조말론 런던의 가치</a>
+									</li>
+									<li>
+										<a href="/sub(best)/best.html">스토리</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div><!-- header_left -->
+				<div class="gnb">
+					<a href="#none" class="search" onclick="openSearch()">
+						<img src="./sub_cologne_images/gnb_serach(black).png" alt="검색">
+					</a>
+					<a href="../JOMALONE_login/JOMALONE_login/login.html" class="my_page">
+						<img src="./sub_cologne_images/mypage_icon(black).png" alt="마이페이지">
+					</a>
+					<a href="#none" class="cart" onclick="openCart()">
+						<img src="/sub(cologne)/sub_cologne_images/gnb_cart(black).png" alt="장바구니 담기">
+					</a>
+				</div>
+				<div class="cart_modal" id="cartModal">
+					<div class="cart_modal_inner">
+						<div class="cart_modal_close" onclick="closeCart()">
+							<img src="./sub_cologne_images/close_btn.png" alt="모달 닫기">
+						</div>
+						<p class="inform_txt">상품이 장바구니에 추가 되었습니다.</p>
+						<div class="cart_contents">
+							<div class="cart_contents_left">
+								<div class="img">
+									<img src="../detail/detail_images/detail_item01.png" alt="장바구니 목록">
+								</div>
+								<div class="cart_number">
+									<input type='button' onclick='count("plus")' value='+' />
+									<div id='result'>0</div>
+									<input type='button' onclick='count("minus")' value='-' />
+								</div>
+							</div>
+							<div class="cart_contents_right">
+								<div class="txt">
+									<p>Black Berry & Bay Cologne</p>
+									<p>블랙베리 앤 베이코롱</p>
+									<P>100m</P>
+								</div>
+								<div class="price">
+									<p>￦ 110,000</p>
+								</div>
+							</div>
+						</div>
+						<div class="modal_button">
+							<a href="#none">장바구니 보기</a>
+							<a href="#none">바로 구매하기</a>
+						</div>
+					</div>
+				</div>
+			</div><!-- header_inner -->
+			<div id="search" class="search_box">
+				<div class="search_box_inner">
+					<div class="search_logo">
+						<p>JO MALONE</p>
+						<P>LONDON</P>
+					</div>
+					<div class="search_close" onclick="closeSearch()">
+						<img src="./sub_cologne_images/close_btn.png" alt="검색창 닫기">
+					</div>
+					<div class="search_bar">
+						<input type="text" placeholder="찾으시는 상품을 입력 해주세요.">
+						<div class="search_bar_icon">
+							<img src="./sub_cologne_images/gnb_serach(black).png" alt="검색버튼">
+						</div>
+					</div>
+					<ul>
+						<li>
+							<a href="#none">
+								블랙베리 앤 베이를 기념하며
+							</a>
+						</li>
+						<li>
+							<a href="#none">
+								블랙베리 앤 코롱
+							</a>
+						</li>
+						<li>
+							<a href="#none">
+								블랙베리 앤 디퓨저
+							</a>
+						</li>
+						<li>
+							<a href="#none">
+								스타 매그놀리아
+							</a>
+						</li>
+						<li>
+							<a href="#none">
+								블로썸 컬렉션
+							</a>
+						</li>
+						<li>
+							<a href="#none">
+								나시 블로썸
+							</a>
+						</li>
+					</ul>
+				</div><!-- search_box_inner -->
+			</div><!-- search_box -->
+		</header>
+	</div>
+	<!-- header_wrap active -->
+
+	<div class="web_guide">
+		<div class="web_map">
+			<a href="../index.html">home</a>
+			<i class="fas fa-chevron-right"></i>
+			<a href="../sub(cologne)/cologne.html">cologne</a>
+		</div>
+		<div class="select">
+			<div class="select_main">
+				<p>정렬</p>
+				<i class="fas fa-caret-down"></i>
+			</div>
+			<ul class="option-list">
+				<li class="option">
+					<p>인기순</p>
+				</li>
+				<li class="option">
+					<p>가격순</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="wrap">
+		<section class="best_product">
+		</section>
+	</div>
+
+	<div class="pagination">
+		<ul>
+			<li><a href="#none"><i class="fas fa-angle-double-left"></i></a></li>
+			<li><a href="#none"><i class="fas fa-angle-left"></i></a></li>
+			<li class="on"><a href="#none">1</a></li>
+			<li><a href="#none">2</a></li>
+			<li><a href="#none">3</a></li>
+			<li><a href="#none">4</a></li>
+			<li><a href="#none">5</a></li>
+			<li><a href="#none"><i class="fas fa-angle-right"></i></a></li>
+			<li><a href="#none"><i class="fas fa-angle-double-right"></i></a></li>
+		</ul>
+	</div>
+
+	<footer>
+		<div class="footer_inner">
+			<div class="footer_contents">
+				<div class="footer_top">
+					<input type="checkbox" id="customerservice">
+					<label for="customerservice">고객서비스</label>
+					<div class="customer_slide_down slide-down">
+						<ul>
+							<li><a href="#none">자주묻는질문</a></li>
+							<li><a href="#none">고객관리지원팀</a></li>
+							<li><a href="#none">나의 프로필</a></li>
+							<li><a href="#none">나의 오더</a></li>
+							<li><a href="#none">주문 조회</a></li>
+							<li><a href="#none">교환 및 환불 규정</a></li>
+							<li><a href="#none">온라인 뷰티크 쇼핑</a></li>
+						</ul>
+					</div>
+					<input type="checkbox" id="company">
+					<label for="company">회사 소개</label>
+					<div class="company_slide_down slide-down">
+						<ul>
+							<li><a href="#none">법인 정보</a></li>
+							<li><a href="#none">커리어</a></li>
+						</ul>
+					</div>
+					<input type="checkbox" id="social">
+					<label for="social">소셜 네트워크</label>
+					<div class="social_slide_down slide-down">
+						<ul>
+							<li><a href="#none">인스타그램</a></li>
+							<li><a href="#none">페이스북</a></li>
+							<li><a href="#none">유튜브</a></li>
+						</ul>
+					</div>
+					<label for="terms">이용약관</label>
+					<label for="personal">개인정보처리방침</label>
+				</div><!-- footer_top -->
+				<div class="footer_txt">
+					<p>
+						이엘씨에이한국(유)대표: Teng,Hsiao-Hua(Catherin),서울시 강남구 강남대로 382 역삼동 메리츠타워,06232
+					</p>
+					<div class="business">
+						<p>사업자 등록번호: 211-81-71889</p>
+						<p>통신판매업신고번호:강남-15737호</p>
+						<p>사업자정보조회</p>
+					</div>
+					<div class="csteam">
+						<p>고객관리지원팀:(02)6971-3228</p>
+						<p>cunsumercare-kr@jomalone.com</p>
+					</div>
+					<p>호스팅 서비스 사업자:(주)엘지유플러스</p>
+					<p class="c">(c)Jo Malone London 2021<span>대한민국</span></p>
+				</div>
+				<div class="footer_right">
+					<div class="online_mall">
+						<div class="online_mall_sticker">
+							<div class="online_mall_title">
+								<p>JO MALONE</p>
+								<p>LONDON</p>
+							</div>
+							<P class="en">GUARANTEED AUTHENTIC</P>
+						</div>
+						<p>공식 온라인몰</p>
+					</div><!-- online_mall -->
+					<div class="sns">
+						<a href="#none"><i class="fab fa-instagram"></i></a>
+						<a href="#none"><i class="fab fa-facebook-f"></i></a>
+						<a href="#none"><i class="fab fa-youtube"></i></a>
+					</div>
+				</div>
+			</div><!-- footer_contents -->
+		</div><!-- footer_inner -->
+	</footer>
+	<a class="btn_top active" href="#none">Top</a>
+</body>
+
+</html>

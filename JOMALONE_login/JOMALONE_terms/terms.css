@@ -1,0 +1,283 @@
+@font-face {
+    font-family: 'KOTRA_GOTHIC';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/KOTRA_GOTHIC.woff') format('woff');
+    font-weight: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+body {
+    background-color: #faf5e3;
+}
+
+/* TOP_BANNER */
+.top_banner {
+    width: 100%;
+    height: 40px;
+    background-color: black;
+    overflow: hidden;
+}
+
+.top_banner li {
+    height: inherit;
+    line-height: 40px;
+    padding-left: 20px;
+}
+
+.top_banner li a {
+    color: rgba(255, 255, 255, 0.699);
+}
+
+/* MAP */
+.map {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+}
+
+.map a {
+    font-family: 'Bookk Myungjo';
+}
+
+.map a:hover {
+    border-bottom: 1px solid #00000088;
+}
+
+.map i {
+    margin-top: 2px;
+    padding: 0 8px;
+    color: rgba(0, 0, 0, 0.726);
+}
+
+/* --------- login (txt) --------- */
+
+label:hover {
+    cursor: pointer;
+}
+
+.login_title {
+    height: 250px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+}
+
+.login_title video {
+    z-index: -1;
+}
+
+.login_title .title_txt {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0000007e;
+    color: white;
+    padding-top: 70px;
+    padding-left: 50px;
+}
+
+.login_title .title {
+    font-size: 40px;
+}
+
+.login_title .sub_title {
+    font-family: 'KOTRA_GOTHIC';
+    margin-top: 20px;
+    letter-spacing: 1px;
+}
+
+.login_title .sub_title span {
+    font-family: 'Bookk Myungjo';
+}
+
+/* ----------- terms(title) ----------- */
+.terms {
+    font-family: 'KOTRA_GOTHIC';
+}
+
+.terms .terms_inner .terms_title {
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.terms .terms_inner .terms_title p:first-child {
+    font-size: 22px;
+    font-weight: bold;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    display: inline-block;
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.terms .terms_inner .terms_title p:last-child {
+    font-size: 17px;
+}
+
+.terms .terms_inner .terms_title p:last-child span {
+    font-family: 'Bookk Myungjo';
+    font-weight: bold;
+}
+
+.terms .terms_inner .terms_title p:last-child strong {
+    border-bottom: 2px solid black;
+}
+
+
+/* ----------- terms(checkbox_title) ----------- */
+
+.checkbox_group {
+    position: relative;
+    width: 600px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.checkbox_group input[type=checkbox] {
+    display: none;
+}
+
+.checkbox_group .all_check {
+    box-sizing: border-box;
+}
+
+.checkbox_group .all_check:first-child {
+    padding: 10px 0px;
+    background-color: rgba(0, 0, 0, 0.938);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.137);
+}
+
+.checkbox_group .all_check:first-child .check_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    letter-spacing: -1px;
+    border-bottom: none;
+}
+
+.checkbox_group .all_check:first-child span {
+    font-family: 'Bookk Myungjo';
+    font-weight: bold;
+}
+
+.checkbox_group .all_check:first-child label {
+    font-size: 13px;
+    letter-spacing: -1px;
+}
+
+
+/* ----------- terms(약관시작) ----------- */
+/* f106 */
+
+.checkbox_group .all_check .terms_txt_title {
+    color: rgb(255, 255, 255);
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.938);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.checkbox_group .all_check .terms_txt_title:after {
+    content: '\f106 ';
+    font-family: fontawesome;
+    font-weight: bold;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    float: right;
+}
+
+.checkbox_group .all_check .terms_txt_title.active:after {
+    transform: rotateX(180deg);
+    transition: 0.2s;
+}
+
+.checkbox_group .all_check .terms_txt {
+    background-color: rgb(255, 255, 255);
+    height: 150px;
+    overflow-y: scroll;
+    display: none;
+    border-right: 2px solid rgba(0, 0, 0, 0.938);
+    border-left: 2px solid rgba(0, 0, 0, 0.938);
+    box-sizing: border-box;
+}
+
+.checkbox_group .all_check .terms_txt p {
+    font-size: 13px;
+    line-height: 23px;
+}
+
+.checkbox_group .all_check .check_wrap {
+    padding: 2px 10px;
+    text-align: right;
+    color: rgb(255, 254, 254);
+    background-color: rgba(0, 0, 0, 0.938);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.11);
+}
+
+.checkbox_group .all_check .check_wrap label {
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+}
+
+.checkbox_group .all_check .check_wrap label:after {
+    content: '\f00c';
+    font-family: fontawesome;
+    border: 1px solid black;
+    background-color: #fff;
+    width: 14px;
+    height: 14px;
+    font-size: 13px;
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 14px;
+    color: transparent;
+    transition: 0.2s;
+    margin-left: 8px;
+}
+
+.checkbox_group .check_wrap input[type=checkbox]:checked+label:after {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}
+
+.checkbox_group .terms_btn {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.checkbox_group .terms_btn button {
+    width: 250px;
+    font-size: 17px;
+    letter-spacing: 2px;
+    padding: 13px 0;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.952);
+    color: rgba(255, 255, 255, 0.541);
+}
+
+.checkbox_group .terms_btn button:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}

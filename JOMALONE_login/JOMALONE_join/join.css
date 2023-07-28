@@ -1,0 +1,311 @@
+@font-face {
+    font-family: 'KOTRA_GOTHIC';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/KOTRA_GOTHIC.woff') format('woff');
+    font-weight: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+body {
+    background-color: #faf5e3;
+}
+
+/* TOP_BANNER */
+.top_banner {
+    width: 100%;
+    height: 40px;
+    background-color: black;
+    overflow: hidden;
+}
+
+.top_banner li {
+    height: inherit;
+    line-height: 40px;
+    padding-left: 20px;
+}
+
+.top_banner li a {
+    color: rgba(255, 255, 255, 0.699);
+}
+
+/* MAP */
+.map {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+}
+
+.map a {
+    font-family: 'Bookk Myungjo';
+}
+
+.map a:hover {
+    border-bottom: 1px solid #00000088;
+}
+
+.map i {
+    margin-top: 2px;
+    padding: 0 8px;
+    color: rgba(0, 0, 0, 0.726);
+}
+
+/* --------- login (txt) --------- */
+label:hover {
+    cursor: pointer;
+}
+
+.login_title {
+    height: 250px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+}
+
+.login_title video {
+    z-index: -1;
+}
+
+.login_title .title_txt {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0000007e;
+    color: white;
+    padding-top: 70px;
+    padding-left: 50px;
+}
+
+.login_title .title {
+    font-size: 40px;
+}
+
+.login_title .sub_title {
+    font-family: 'KOTRA_GOTHIC';
+    margin-top: 20px;
+    letter-spacing: 1px;
+}
+
+.login_title .sub_title span {
+    font-family: 'Bookk Myungjo';
+}
+
+/* ----------- join(title) ----------- */
+.join {
+    font-family: 'KOTRA_GOTHIC';
+}
+
+.join .join_inner{
+    margin-bottom: 10px;
+}
+.join .join_inner .join_title {
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.join .join_inner .join_title p:first-child {
+    font-size: 22px;
+    font-weight: bold;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    display: inline-block;
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.join .join_inner .join_title p:last-child {
+    font-size: 17px;
+}
+.join .join_inner .join_title p:last-child span{
+    font-family: 'Bookk Myungjo';
+    font-weight: bold;
+}
+
+/* ----------- join(form) ----------- */
+
+/* FORM */
+
+form{
+    width: 550px;
+    margin: 0 auto;
+    border: 3px solid rgba(0, 0, 0, 0.644);
+    padding: 15px;
+}
+form #content{
+    padding: 10px 0 40px;
+}
+form .wrapping{
+    padding: 0 50px;
+    border: 3px solid rgba(0, 0, 0, 0.644);
+}
+h3 {
+    margin: 30px 0 8px;
+    font-size: 14px;
+}
+.sub{
+    color: rgb(179, 0, 0);
+    font-size: 12px;
+    float: right;
+}
+.int {
+    display: block;
+    position: relative;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid #00000050;
+    padding: 12px 0;
+}
+
+.int:hover{
+    border-bottom: 2px solid rgb(0, 0, 0);
+    transition: 0.3s;
+} 
+.int:focus::placeholder{
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+.int::placeholder{
+    opacity: 1;
+} 
+
+
+/* PW */
+.pw {
+    position: relative;
+}
+.pw .pswdImg {
+    position: absolute;
+    width: 18px;
+    right: 0;
+    margin-top: -28px;
+    margin-right: 10px;
+   
+}
+
+/* BIRTH */
+
+#bir_wrap .int{
+    background-color: transparent;
+}
+#bir_wrap {
+    display: flex;
+}
+#bir_wrap div{
+    flex: 1;
+    margin-right: 10px;
+}
+#bir_wrap div:last-child{
+    margin-right: 0;
+}
+
+select {
+    width: 100%;
+    font-size: 15px;
+    display: inline-block;
+    text-align: start;
+    padding: 10px 0;
+    border: 2px solid rgba(0, 0, 0, 0.24);
+    background-color: transparent;
+    cursor: pointer;
+}
+select:hover{
+    border: 2px solid black;
+    transition: 0.3s;
+}
+
+/* EMAIL */
+
+.email_wrap .email_code{
+    display: flex;
+    align-items: center;
+}
+.email_wrap .email_code span{
+    width: 70px;
+    text-align: center;
+    font-weight: bold;
+}
+.email_wrap .email_code select{
+    width: 100px;
+    margin-left: 10px;
+}
+
+
+/* 에러메세지 */
+
+.error_next_box {
+    margin-top: 9px;
+    font-size: 12px;
+    display: none;
+    padding: 5px;
+}
+
+
+.btn_area {
+    width: 320px;
+    margin: 30px auto 0;
+}
+
+#btnJoin {
+    font-family: 'KOTRA_GOTHIC';
+    width: 100%;
+    border: 0;
+    padding: 15px 0;
+    cursor: pointer;
+    color: #fff;
+    background-color: #000000e1;
+    font-size: 20px;
+}
+#btnJoin:hover{
+    background-color: black;
+    transition: 0.3s;
+}
+#btnHistory {
+    font-family: 'KOTRA_GOTHIC';
+    display: block;
+    width: 320px;
+    margin: 0 auto;
+    cursor: pointer;
+    color: #030303;
+    font-size: 16px;
+    margin-top: 10px;
+    background-color: transparent;
+    font-weight: bold;
+    border: 0;
+}
+#btnHistory:hover i{
+    transform: translateX(0);
+    opacity: 1;
+    transition: 0.6s;
+}
+#btnHistory span{
+    display: flex;
+    align-items: center;
+    width: 100px;
+    margin: 0 auto;
+}
+#btnHistory span i{
+    margin-right: 8px;
+    margin-top: -2px;
+    opacity: 0;
+    transform: translateX(-20px);
+    color: rgba(0, 0, 0, 0.774);
+}

@@ -1,0 +1,908 @@
+@font-face {
+    font-family: 'KOTRA_GOTHIC';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/KOTRA_GOTHIC.woff') format('woff');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+body {
+    background-color: #fcf9ee;
+    font-family: 'Bookk Myungjo';
+}
+
+/* HEADER */
+.header_wrap {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+/* TOP_BANNER */
+.top_banner {
+    width: 100%;
+    height: 40px;
+    background-color: black;
+    overflow: hidden;
+}
+
+.top_banner li {
+    height: inherit;
+    line-height: 40px;
+    padding-left: 20px;
+}
+
+.top_banner li a {
+    color: rgba(255, 255, 255, 0.699);
+}
+
+header {
+    height: 80px;
+    padding: 0 45px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.123);
+    background-color: #fcf9ee;
+    /* margin-top: 40px; */
+}
+
+header .header_inner {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(8, 8, 8);
+}
+
+header::after {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    background-color: #fcf9ee;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    height: 85px;
+    transition: all 0.3s;
+    transform: translateY(120px);
+    opacity: 0;
+}
+
+header.hovered::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.header_inner .header_left {
+    display: flex;
+    align-items: end;
+}
+
+.header_inner .header_left .main_logo {
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.header_inner .header_left .main_logo p {
+    color: rgb(10, 10, 10);
+}
+
+.header_inner .header_left .main_logo p:first-child {
+    font-size: 30px;
+}
+
+.header_inner .header_left .main_logo p:last-child {
+    font-size: 12px;
+}
+
+.header_inner .header_left .lnb {
+    padding-left: 45px;
+}
+
+.header_inner .header_left .lnb ul {
+    display: flex;
+    font-size: 20px;
+}
+
+.header_inner .header_left .lnb ul li {
+    margin-right: 80px;
+}
+
+.header_inner .header_left .lnb .lnb_title {
+    color: rgb(0, 0, 0);
+    position: relative;
+    padding-bottom: 14px;
+}
+
+.header_inner .header_left .lnb .lnb_title::after {
+    content: '';
+    position: absolute;
+    background-color: rgb(25, 31, 19);
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    left: 50%;
+    transition: 0.3s;
+    transform: translateX(-50%);
+}
+
+.header_inner .header_left .lnb .lnb_title:hover::after {
+    width: 100%;
+}
+
+.header_inner .header_left .lnb .lnb_dep2 {
+    font-family: 'KOTRA_GOTHIC';
+    position: absolute;
+    top: 122px;
+    opacity: 0;
+    visibility: hidden;
+    padding: 25px 0;
+}
+
+.header_inner .header_left .lnb .lnb_dep2 li {
+    float: left;
+    margin-right: 50px;
+}
+
+.header_inner .header_left .lnb .lnb_dep2 li a {
+    font-size: 16px;
+    position: relative;
+}
+
+.header_inner .header_left .lnb ul li:hover .lnb_dep2 {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.5s;
+}
+
+.header_inner .header_left .lnb .lnb_dep2 li a::after {
+    content: '';
+    position: absolute;
+    background-color: black;
+    width: 4px;
+    height: 4px;
+    border-radius: 50px;
+    top: -5px;
+    right: -5px;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.header_inner .header_left .lnb .lnb_dep2 li a:hover::after {
+    opacity: 1;
+}
+
+.header_inner .gnb {
+    width: 140px;
+}
+
+.header_inner .gnb a {
+    float: left;
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-right: 25px;
+}
+
+.header_inner .gnb .cart {
+    margin-right: 0;
+}
+
+.header_inner .gnb a img {
+    width: 100%;
+    height: 100%;
+}
+
+/* CART_MODAL */
+.header_inner .cart_modal {
+    position: fixed;
+    z-index: 99999;
+    width: 500px;
+    height: 100vh;
+    background-color: #ffffff;
+    top: 0;
+    right: 0;
+    padding: 15px;
+    box-sizing: border-box;
+    animation: slideright 0.3s linear;
+    display: none;
+}
+
+@keyframes slideright {
+    0% {
+        opacity: 0;
+        margin-right: -100px;
+    }
+
+    100% {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+.header_inner .cart_modal.active {
+    display: block;
+}
+
+.header_inner .cart_modal .cart_modal_inner {
+    border: 2px solid black;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.cart_modal .cart_modal_inner .cart_modal_close {
+    width: 35px;
+    height: 35px;
+    float: right;
+    cursor: pointer;
+}
+
+.cart_modal .cart_modal_inner .cart_modal_close img {
+    width: 100%;
+    height: 100%;
+}
+
+.cart_modal .cart_modal_inner .inform_txt {
+    font-family: 'KOTRA_GOTHIC';
+    border: 1px solid white;
+    text-align: center;
+    margin-top: 330px;
+}
+
+.cart_modal .cart_modal_inner .cart_contents {
+    display: flex;
+    padding: 0 65px;
+    margin-top: 70px;
+    box-sizing: border-box;
+}
+
+.cart_modal .cart_modal_inner .cart_contents_left {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+.cart_modal .cart_modal_inner .cart_contents_left .img {
+    width: 110px;
+    height: 180px;
+    background-color: #dddddd3d;
+}
+
+.cart_modal .cart_modal_inner .cart_contents_left .img img {
+    width: 120%;
+    height: 90%;
+    margin-left: -10px;
+    margin-top: 10px;
+}
+
+.cart_modal .cart_modal_inner .cart_contents_left .cart_number {
+    border: 1px solid #dddddd8e;
+    width: 110px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.cart_contents_left .cart_number input {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.cart_modal .cart_modal_inner .cart_contents_right {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart_contents_right .txt {
+    width: 200px;
+    height: 180px;
+    text-align: center;
+    line-height: 25px;
+}
+
+.cart_contents_right .txt p:first-child {
+    margin-top: 55px;
+}
+
+.cart_contents_right .txt p:nth-child(2) {
+    font-family: 'KOTRA_GOTHIC';
+}
+
+.cart_contents_right .txt p:nth-child(3) {
+    margin-top: 10px;
+}
+
+.cart_contents_right .price {
+    width: 200px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.cart_modal .cart_modal_inner .modal_button {
+    margin-top: 60px;
+}
+
+.cart_modal .cart_modal_inner .modal_button a {
+    font-family: 'KOTRA_GOTHIC';
+    display: block;
+    width: 330px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    margin: 0 auto;
+    transition: all 0.3s;
+}
+
+.cart_modal .cart_modal_inner .modal_button a:first-child {
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.modal_button a:first-child:hover {
+    background-color: black;
+    color: white;
+}
+
+.cart_modal .cart_modal_inner .modal_button a:last-child {
+    background-color: rgb(0, 0, 0);
+    color: rgba(255, 255, 255, 0.815);
+    margin-top: 10px;
+}
+
+
+/* header(search_box) */
+.search_box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fcf9ee;
+    width: 100%;
+    height: 400px;
+    padding: 0 45px;
+    box-sizing: border-box;
+    border-bottom: 2px solid #000;
+    display: none;
+    visibility: hidden;
+    animation: slidefade 0.3s linear;
+}
+
+
+@keyframes slidefade {
+    0% {
+        opacity: 0;
+        margin-top: -50px;
+    }
+
+    100% {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+.search_box.active {
+    display: block;
+    visibility: visible;
+}
+
+.search_box .search_box_inner {
+    width: 100%;
+    height: 100%;
+}
+
+.search_box .search_box_inner .search_logo {
+    width: 200px;
+    text-align: center;
+    padding: 13px 0;
+}
+
+.search_box .search_box_inner .search_logo p:first-child {
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+.search_box .search_box_inner .search_logo p:last-child {
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.search_box .search_box_inner .search_close {
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+    float: right;
+    margin-top: -60px;
+    margin-right: 25px;
+    cursor: pointer;
+}
+
+.search_box .search_box_inner .search_close img {
+    width: 100%;
+    height: 100%;
+}
+
+.search_box .search_box_inner .search_bar {
+    position: relative;
+    width: 700px;
+    height: 50px;
+    margin: 0 auto;
+    margin-top: 55px;
+}
+
+.search_box .search_box_inner .search_bar input {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #000;
+    margin: 0 auto;
+}
+
+.search_box .search_box_inner .search_bar input::placeholder {
+    font-family: 'KOTRA_GOTHIC';
+    color: black;
+    font-size: 15px;
+    float: right;
+    margin-right: 50px;
+}
+
+.search_box .search_box_inner .search_bar input:focus::placeholder {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.search_box .search_box_inner .search_bar .search_bar_icon {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    width: 25px;
+    height: 25px;
+}
+
+.search_box .search_box_inner .search_bar .search_bar_icon img {
+    width: 100%;
+    height: 100%;
+}
+
+.search_box .search_box_inner ul {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 145px;
+}
+
+.search_box .search_box_inner ul li {
+    padding: 0 40px;
+    line-height: 30px;
+    background-color: rgba(255, 255, 255, 0.685);
+    border: 1px solid #4444447c;
+    box-sizing: border-box;
+    color: black;
+}
+
+.search_box .search_box_inner ul li a {
+    font-family: 'KOTRA_GOTHIC';
+    width: 100%;
+}
+
+.search_box .search_box_inner ul li:hover {
+    background-color: rgba(0, 0, 0, 0.884);
+    transition: all 0.3s;
+}
+
+.search_box .search_box_inner ul li:hover a {
+    color: white;
+    transition: all 0.3s;
+}
+
+/* WEB_quide */
+.web_guide {
+    width: 1300px;
+    height: 20px;
+    margin: 0 auto;
+    margin-top: 240px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.web_guide .web_map {
+    display: flex;
+}
+
+.web_guide .web_map i {
+    color: rgba(0, 0, 0, 0.76);
+    font-size: 12px;
+    padding: 0 5px;
+    margin-top: 6px;
+}
+
+/* DETAIL(SELECT) */
+.select {
+    font-family: 'KOTRA_GOTHIC';
+    position: relative;
+}
+
+.select .option-list {
+    position: absolute;
+    top: 24px;
+    right: 0;
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-top: 0;
+    transition: all 0.3s;
+}
+
+.select.active .option-list {
+    max-height: none;
+    opacity: 1;
+}
+
+.select {
+    cursor: pointer;
+    width: 130px;
+}
+
+.select .select_main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.select .select_main p{
+    margin-top: 3px;
+}
+
+.select .select_main:hover {
+    border: 1px solid rgba(0, 0, 0, 0.404);
+}
+
+
+.select .option-list .option {
+    border-bottom: 1px solid #ccc;
+    transition: all 0.3s;
+    padding: 2px 5px;
+}
+
+.select .option-list .option:last-child {
+    border-bottom: none;
+}
+
+.select .option-list .option:hover {
+    background-color: black;
+    color: white;
+}
+
+/* BEST_PRODUCT */
+.wrap {
+    margin: 0 auto;
+}
+
+.wrap .best_product {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1300px;
+    margin: 0 auto;
+}
+
+.wrap .best_product .best_box {
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 360px;
+    height: 450px;
+    margin: 35px;
+    cursor: pointer;
+    position: relative;
+}
+
+
+.wrap .best_product img {
+    display: block;
+    width: 290px;
+    height: 340px;
+    margin: 0 auto;
+}
+
+.wrap .best_product p {
+    text-align: center;
+}
+
+.wrap .best_product p:nth-child(2) {
+    margin-top: 10px;
+}
+
+.wrap .best_product p:nth-child(3) {
+    font-family: 'KOTRA_GOTHIC';
+    margin-top: 5px;
+}
+
+.wrap .best_product p:nth-child(4) {
+    margin-top: 20px;
+}
+
+.wrap .best_product p:nth-child(5) {
+    background-color: rgba(255, 255, 255, 0.644);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    padding-top: 200px;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.wrap .best_product .best_box:hover p:nth-child(5){
+    opacity: 1;
+}
+
+
+/* PAGINATION */
+.pagination {
+    width: 305px;
+    margin: 0 auto;
+}
+
+.pagination ul {
+    display: flex;
+}
+
+.pagination ul li {
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.pagination ul li.on{
+    background-color: #444;
+}
+
+.pagination ul li.on a{
+    color: white;
+}
+
+.pagination ul li:hover {
+    border: 1px solid #9c9c9c;
+}
+
+.pagination ul li:last-child {
+    margin-right: 0;
+}
+
+.pagination ul li:nth-child(1),
+.pagination ul li:nth-child(2),
+.pagination ul li:nth-child(8),
+.pagination ul li:nth-child(9) {
+    background-color: #ccc;
+}
+
+.pagination ul li a {
+    display: inline-block;
+    margin-top: 4px;
+    font-size: 12px;
+}
+
+.pagination ul li:nth-child(1) a,
+.pagination ul li:nth-child(2) a,
+.pagination ul li:nth-child(8) a,
+.pagination ul li:nth-child(9) a {
+    color: rgba(63, 63, 63, 0.555);
+    margin-top: 5px;
+}
+
+/* FOOTER */
+footer {
+    font-family: 'KOTRA_GOTHIC';
+    width: 100%;
+    height: 350px;
+    margin: 0 auto;
+    margin-top: 100px;
+    background-color: #444;
+    padding: 25px;
+    box-sizing: border-box;
+    color: #ddd;
+    font-size: 12px;
+}
+
+footer .footer_inner {
+    border: 2px solid #ddd;
+    width: 100%;
+    height: 100%;
+    padding: 35px 115px;
+    box-sizing: border-box;
+}
+
+footer .footer_inner .footer_contents {
+    height: 100%;
+    position: relative;
+}
+
+.footer_inner .footer_top input {
+    display: none;
+}
+
+.footer_inner .footer_top label {
+    margin-right: 30px;
+}
+
+.footer_inner .footer_top .slide-down {
+    display: none;
+    position: absolute;
+    border: 2px solid #ddd;
+    width: 100px;
+    padding: 5px;
+    background-color: #444;
+}
+
+.footer_inner .footer_top .slide-down a {
+    color: #ddd;
+}
+
+.footer_inner .footer_top .company_slide_down {
+    left: 85px;
+}
+
+.footer_inner .footer_top .social_slide_down {
+    left: 165px;
+}
+
+input[id="customerservice"]:checked~.customer_slide_down {
+    display: block;
+}
+
+input[id="company"]:checked~.company_slide_down {
+    display: block;
+}
+
+input[id="social"]:checked~.social_slide_down {
+    display: block;
+}
+
+.footer_inner .footer_txt {
+    margin-top: 30px;
+}
+
+.footer_inner .footer_txt .business {
+    display: flex;
+    margin-top: 10px;
+}
+
+.footer_inner .footer_txt .business p {
+    margin-right: 30px;
+}
+
+.footer_inner .footer_txt .business p:last-child {
+    border-bottom: 1px solid #ddd;
+}
+
+.footer_inner .footer_txt .csteam {
+    display: flex;
+    margin: 10px 0;
+}
+
+.footer_inner .footer_txt .csteam p {
+    margin-right: 30px;
+}
+
+.footer_inner .footer_txt .c {
+    margin-top: 40px;
+}
+
+.footer_inner .footer_right {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.footer_inner .footer_right .online_mall {
+    text-align: center;
+    width: 140px;
+}
+
+.footer_inner .footer_right .online_mall .online_mall_sticker {
+    border: 1px solid #ddd;
+    width: 140px;
+    height: 60px;
+}
+
+.online_mall_sticker .online_mall_title {
+    font-family: 'Bookk Myungjo';
+    border-bottom: 1px solid #ddd;
+    padding: 5px 0;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.online_mall_sticker .en {
+    font-family: 'Bookk Myungjo';
+    font-size: 2px;
+}
+
+.footer_inner .footer_right .sns {
+    font-size: 25px;
+    width: 200px;
+    position: absolute;
+    bottom: -70px;
+}
+
+.footer_inner .footer_right .sns a {
+    color: #ddd;
+    background-color: #615f5f;
+    display: inline-block;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    line-height: 45px;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+.footer_inner .footer_right .sns a:hover {
+    background-color: #838383;
+    transition: all 0.3s;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+/* BTN_TOP */
+.btn_top {
+    font-family: 'Bookk Myungjo';
+    position: fixed;
+    right: 80px;
+    bottom: 60px;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    line-height: 55px;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.6s;
+    border-radius: 50%;
+}
+
+.btn_top.active {
+    transform: translateY(0);
+    opacity: 1;
+}

@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>subpage</title>
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<!-- JS -->
+	<script src="./js/jquery-3.6.4.min.js"></script>
+	<script src="./js/jquery.scrollTo.min.js"></script>
+	<script src="./js/jquery.easing.min.js"></script>
+	<script src="./js/jquery.mousewheel.min.js"></script>
+	<script src="./js/best.js" defer></script>
+	<!-- swiper -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+	<!-- FONTAWESOME-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" />
+	<!-- CSS -->
+	<link rel="stylesheet" href="./best.css">
+	<link rel="stylesheet" href="./font/stylesheet.css">
+</head>
+
+<body>
+	<div class="header_wrap active">
+		<ul class="top_banner">
+			<li>
+				<a href="#">
+					* 모든 구매 시 원하는 샘플 2종을 직접 선택하여 센트 페어링을 경험해 보세요.
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					* 하일랜드 리미티드 컬렉션 제품 2개 이상 구매 시, 리미티드 스퀘어 박스 포장 서비스를 제공해 드립니다.
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					* 모든 구매 고객님께 리미티드 센트를 먼저 경험해 보실 수 있는 리쿼터치 센티드 카드를 선물로 드립니다.
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					* 첫 구매 시 피오니 앤 블러쉬 스웨이드 코롱 9ML를 선물로 드립니다. (쿠폰코드:WELCOME)
+				</a>
+			</li>
+		</ul>
+		<header class="active">
+			<div class="header_inner">
+				<div class="header_left">
+					<div class="main_logo">
+						<a href="../index.html">
+							<p>JO MALONE</p>
+							<p>LONDON</p>
+						</a>
+					</div>
+					<div class="lnb">
+						<ul>
+							<li>
+								<a href="/sub(cologne)/cologne.html" class="lnb_title">new</a>
+								<ul class="lnb_dep2">
+									<li>
+										<a href="#">블랙엔베리를 기념하며</a>
+									</li>
+									<li>
+										<a href="#">블라썸 컬렉션</a>
+									</li>
+									<li>
+										<a href="#">리틀 럭셔리</a>
+									</li>
+									<li>
+										<a href="#">셀러브레이팅 더로즈</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="/sub(cologne)/cologne.html" class="lnb_title">scent</a>
+								<ul class="lnb_dep2">
+									<li>
+										<a href="#">시트러스</a>
+									</li>
+									<li>
+										<a href="#">프루티</a>
+									</li>
+									<li>
+										<a href="#">라이트 플로랄</a>
+									</li>
+									<li>
+										<a href="#">플로랄</a>
+									</li>
+									<li>
+										<a href="#">스파이시</a>
+									</li>
+									<li>
+										<a href="#">우디</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="/sub(cologne)/cologne.html" class="lnb_title">shop</a>
+								<ul class="lnb_dep2">
+									<li>
+										<a href="#">코롱</a>
+									</li>
+									<li>
+										<a href="#">배스 앤 바디</a>
+									</li>
+									<li>
+										<a href="#">홈 프레그런스</a>
+									</li>
+									<li>
+										<a href="#">선물하기</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="/sub(cologne)/cologne.html" class="lnb_title">about</a>
+								<ul class="lnb_dep2">
+									<li>
+										<a href="#">조말론 런던의 가치</a>
+									</li>
+									<li>
+										<a href="#">스토리</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div><!-- header_left -->
+				<div class="gnb">
+					<a href="#none" class="search" onclick="openSearch()">
+						<img src="./sub_images/sub_bestseller/gnb_serach(black).png" alt="검색">
+					</a>
+					<a href="../JOMALONE_login/JOMALONE_login/login.html" class="my_page">
+						<img src="./sub_images/sub_bestseller/mypage_icon(black).png" alt="마이페이지">
+					</a>
+					<a href="#none" class="cart">
+						<img src="./sub_images/sub_bestseller/gnb_cart(black).png" alt="장바구니 담기">
+					</a>
+				</div>
+				<div class="cart_modal" id="cartModal">
+					<div class="cart_modal_inner">
+						<div class="cart_modal_close" onclick="closeCart()">
+							<img src="./sub_images/sub_bestseller/close_btn.png" alt="모달 닫기">
+						</div>
+						<p class="inform_txt">상품이 장바구니에 추가 되었습니다.</p>
+						<div class="cart_contents">
+							<div class="cart_contents_left">
+								<div class="img">
+									<img src="../detail/detail_images/detail_item01.png" alt="장바구니 목록">
+								</div>
+								<div class="cart_number">
+									<input type='button' onclick='count("plus")' value='+' />
+									<div id='result'>0</div>
+									<input type='button' onclick='count("minus")' value='-' />
+								</div>
+							</div>
+							<div class="cart_contents_right">
+								<div class="txt">
+									<p>Black Berry & Bay Cologne</p>
+									<p>블랙베리 앤 베이코롱</p>
+									<P>100m</P>
+								</div>
+								<div class="price">
+									<p>￦ 110,000</p>
+								</div>
+							</div>
+						</div>
+						<div class="modal_button">
+							<a href="#none">장바구니 보기</a>
+							<a href="#none">바로 구매하기</a>
+						</div>
+					</div>
+				</div>
+			</div><!-- header_inner -->
+			<div id="search" class="search_box">
+				<div class="search_box_inner">
+					<div class="search_logo">
+						<p>JO MALONE</p>
+						<P>LONDON</P>
+					</div>
+					<div class="search_close" onclick="closeSearch()">
+						<img src="./sub_images/sub_bestseller/close_btn.png" alt="검색창 닫기">
+					</div>
+					<div class="search_bar">
+						<input type="text" placeholder="찾으시는 상품을 입력 해주세요.">
+						<div class="search_bar_icon">
+							<img src="./sub_images/sub_bestseller/gnb_serach(black).png" alt="검색버튼">
+						</div>
+					</div>
+					<ul>
+						<li>
+							<a href="#none">
+								블랙베리 앤 베이를 기념하며
+							</a>
+						</li>
+						<li>
+							<a href="#none">
+								블랙베리 앤 코롱
+							</a>
+						</li>
+						<li>
+							<a href="#none">
+								블랙베리 앤 디퓨저
+							</a>
+						</li>
+						<li>
+							<a href="#none">
+								스타 매그놀리아
+							</a>
+						</li>
+						<li>
+							<a href="#none">
+								블로썸 컬렉션
+							</a>
+						</li>
+						<li>
+							<a href="#none">
+								나시 블로썸
+							</a>
+						</li>
+					</ul>
+				</div><!-- search_box_inner -->
+			</div><!-- search_box -->
+		</header>
+	</div>
+	<div class="top wrap">
+		<div class="web_map">
+			<a href="../index.html">home</a>
+			<i class="fas fa-chevron-right"></i>
+			<a href="../sub(cologne)/cologne.html">cologne</a>
+			<i class="fas fa-chevron-right"></i>
+			<a href="../sub(best)/best.html">Best seller</a>
+		</div>
+		<div class="first_line">
+			<a href="../detail/detail.html" class="best01 best">
+				<div class="best_img">
+					<img src="./sub_images/sub_bestseller/subBest_item01.png" alt="베스트1">
+				</div>
+				<div class="best_txt">
+					<p>Mini Luxuries</p>
+					<p>미니 럭셔리즈</p>
+					<p>₩69.000</p>
+				</div>
+				<div class="detail">
+					<div class="detail_more">
+						<p>Detail View</p>
+						<div class="img">
+							<img src="../main/main_images/collection_arrow.png" alt="디테일페이지바로가기">
+						</div>
+					</div>
+				</div>
+			</a>
+			<a href="../detail/detail.html" class="best02 best">
+				<div class="best_img">
+					<img src="./sub_images/sub_bestseller/subBest_item02.png" alt="베스트2">
+				</div>
+				<div class="best_txt">
+					<p>Blackberry & Bay Cologne</p>
+					<p>블랙베리 앤 베이 코롱</p>
+					<p>₩218.000</p>
+				</div>
+				<div class="detail">
+					<div class="detail_more">
+						<p>Detail View</p>
+						<div class="img">
+							<img src="../main/main_images/collection_arrow.png" alt="디테일페이지바로가기">
+						</div>
+					</div>
+				</div>
+			</a>
+		</div><!-- first_line -->
+		<div class="second_line">
+			<a href="../detail/detail.html" class="best03 best">
+				<div class="best_img">
+					<img src="./sub_images/sub_bestseller/subBest_item03.png" alt="베스트3">
+				</div>
+				<div class="best_txt">
+					<p>Vanilla & Anise Cologne</p>
+					<p>바닐라 앤 아니스 코롱</p>
+					<p>￦ 218,000</p>
+				</div>
+				<div class="detail">
+					<div class="detail_more">
+						<p>Detail View</p>
+						<div class="img">
+							<img src="../main/main_images/collection_arrow.png" alt="디테일페이지바로가기">
+						</div>
+					</div>
+				</div>
+			</a>
+			<a href="../detail/detail.html" class="best04 best">
+				<div class="best_img">
+					<img src="./sub_images/sub_bestseller/subBest_item04.png" alt="베스트4">
+				</div>
+				<div class="best_txt">
+					<p>Wild Bluebell Body & Hand Wash</p>
+					<p>와일드 블루벨 바디 앤 핸드 워시</p>
+					<p>￦ 38,000</p>
+				</div>
+				<div class="detail">
+					<div class="detail_more">
+						<p>Detail View</p>
+						<div class="img">
+							<img src="../main/main_images/collection_arrow.png" alt="디테일페이지바로가기">
+						</div>
+					</div>
+				</div>
+			</a>
+			<a href="../detail/detail.html" class="best05 best">
+				<div class="best_img">
+					<img src="./sub_images/sub_bestseller/subBest_item05.png" alt="베스트5">
+				</div>
+				<div class="best_txt">
+					<p>White Jasmine & Mint Cologne</p>
+					<p>화이트 자스민 앤 민트 코롱</p>
+					<p>￦ 218,000</p>
+				</div>
+				<div class="detail">
+					<div class="detail_more">
+						<p>Detail View</p>
+						<div class="img">
+							<img src="../main/main_images/collection_arrow.png" alt="디테일페이지바로가기">
+						</div>
+					</div>
+				</div>
+			</a>
+			<a href="../detail/detail.html" class="best06 best">
+				<div class="best_img">
+					<img src="./sub_images/sub_bestseller/subBest_item06.png" alt="베스트6">
+				</div>
+				<div class="best_txt">
+					<p>Peony & Blush Suede Cologne</p>
+					<p>피오니 앤 블러쉬 스웨이드 코롱</p>
+					<p>￦ 218,000</p>
+				</div>
+				<div class="detail">
+					<div class="detail_more">
+						<p>Detail View</p>
+						<div class="img">
+							<img src="../main/main_images/collection_arrow.png" alt="디테일페이지바로가기">
+						</div>
+					</div>
+				</div>
+			</a>
+		</div><!-- second_line -->
+	</div>
+	<!--top wrap -->
+	<div class="sub_visual">
+		<div class="sub_visual_inner">
+			<div class="visual_box">
+				<p>당신의 캔들을 위한 팁</p>
+				<p class="box_txt">
+					캔들에 묶인 그로그랭(Grosgrain) 리본을 풀고 은색 뚜껑을 여는 순간
+					당신은 선택의 기로에 놓입니다.
+					'벽난로 위 선반에 조심스럽게 올려둬야지. 아니야, 다이닝
+					테이블 위가 좋겠어. 잠시만, 아무래도 그냥 벽난로 선반 위가 낫겠어. 그냥 한 개를 더 살 걸 그랬나?'
+					처음 산 그 날 처럼 계속 아름답게 타오를 수 있도록 캔들을 관리하는 방법이 궁금하시죠?<br />
+					당신에게 소중한 팁을 알려드릴게요.
+				</p>
+				<a class="over" href="#none">Look at Jomalone's Tip</a>
+				<div class="tag">
+					<img src="./sub_images/sub_bestseller/ribbon(black).png" alt="">
+				</div>
+			</div>
+			<video src="./sub_images/sub_bestseller/best_visual_banner.mp4" muted autoplay loop></video>
+		</div>
+		<div class="sub_visual_over">
+			<div class="tips">
+				<div class="tip">
+					<div class="tip_front">
+						<p>당신을 위한 팁, 첫번째</p>
+					</div>
+					<div class="tip_back">
+						<p>
+							터널(링)의 끝에 빛을 밝히세요.
+						</p>
+						<p>
+							울퉁불퉁한 표면은 이제 그만. 촛농이 녹아 캔들의 가장자리까지
+							고루 퍼져 고이도록 기다리고, 그 전에는 절대로 불을 끄지마세요.
+						</p>
+					</div>
+				</div>
+				<div class="tip">
+					<div class="tip_front">
+						<p>당신을 위한 팁, 두번째</p>
+					</div>
+					<div class="tip_back">
+						<p>
+							렛 잇 비(Let it Be)
+						</p>
+						<p>
+							심지에 처음 불을 붙이면 연기가 살짝 날 수 있지만, 너무 놀라지 마세요!
+							왁스를 제대로 끌어올리는데 시간이 조금 필요한 것 뿐이에요.
+						</p>
+					</div>
+				</div>
+				<div class="tip">
+					<div class="tip_front">
+						<p>당신을 위한 팁, 세번째</p>
+					</div>
+					<div class="tip_back">
+						<p>
+							심지가 신경쓰이죠?
+						</p>
+						<p>
+							잿가루에 이제 안녕을 고하세요. 매번 불을 켜기 전 심지를 반 정도 자르세요.
+							그러면 심지를 항상 깨끗하고 우아하게 유지 할 수 있어요.
+						</p>
+					</div>
+				</div>
+			</div>
+			<p class="back">GO TO BACK</p>
+		</div>
+	</div>
+
+	<div class="bottom wrap">
+		<div class="third_line">
+			<a href="../detail/detail.html" class="best07 best">
+				<div class="best_img">
+					<img src="./sub_images/sub_bestseller/subBest_item07.png" alt="베스트7">
+				</div>
+				<div class="best_txt">
+					<p>English Pear & Freesia Home Candle</p>
+					<p>잉글리쉬 페어 앤 프리지아 홈 캔들</p>
+					<p>￦ 109,000</p>
+				</div>
+				<div class="detail">
+					<div class="detail_more">
+						<p>Detail View</p>
+						<div class="img">
+							<img src="../main/main_images/collection_arrow.png" alt="디테일페이지바로가기">
+						</div>
+					</div>
+				</div>
+			</a>
+			<a href="../detail/detail.html" class="best08 best">
+				<div class="best_img">
+					<img src="./sub_images/sub_bestseller/subBest_item08.png" alt="베스트8">
+				</div>
+				<div class="best_txt">
+					<p>Blackberry & Bay Diffuser</p>
+					<p>블랙베리 앤 베이 디퓨저</p>
+					<p>￦ 144,000</p>
+				</div>
+				<div class="detail">
+					<div class="detail_more">
+						<p>Detail View</p>
+						<div class="img">
+							<img src="../main/main_images/collection_arrow.png" alt="디테일페이지바로가기">
+						</div>
+					</div>
+				</div>
+			</a>
+			<a href="../detail/detail.html" class="best09 best">
+				<div class="best_img">
+					<img src="./sub_images/sub_bestseller/subBest_item09.png" alt="베스트9">
+				</div>
+				<div class="best_txt">
+					<p>Wood Sage & Sea Salt Cologne</p>
+					<p>우드 세이지 앤 씨 솔트 코롱</p>
+					<p>￦ 218,000</p>
+				</div>
+				<div class="detail">
+					<div class="detail_more">
+						<p>Detail View</p>
+						<div class="img">
+							<img src="../main/main_images/collection_arrow.png" alt="디테일페이지바로가기">
+						</div>
+					</div>
+				</div>
+			</a>
+		</div><!-- third_line -->
+		<div class="fourth_line">
+			<a href="../detail/detail.html" class="best10 best">
+				<div class="best_img">
+					<img src="./sub_images/sub_bestseller/subBest_item10.png" alt="베스트10">
+				</div>
+				<div class="best_txt">
+					<p>English Pear & Freesia Scent Pairing Collection</p>
+					<p>잉글리쉬 페어 앤 프리지아 센트 페어링 컬렉션</p>
+					<p>￦ 195,000</p>
+				</div>
+				<div class="detail">
+					<div class="detail_more">
+						<p>Detail View</p>
+						<div class="img">
+							<img src="../main/main_images/collection_arrow.png" alt="디테일페이지바로가기">
+						</div>
+					</div>
+				</div>
+			</a>
+			<a href="../detail/detail.html" class="best11 best">
+				<div class="best_img">
+					<img src="./sub_images/sub_bestseller/subBest_item11.png" alt="베스트11">
+				</div>
+				<div class="best_txt">
+					<p>Lime Basil & Mandarin Car Diffuser</p>
+					<p>라임 바질 앤 만다린 카 디퓨저</p>
+					<p>￦ 141,000</p>
+				</div>
+				<div class="detail">
+					<div class="detail_more">
+						<p>Detail View</p>
+						<div class="img">
+							<img src="../main/main_images/collection_arrow.png" alt="디테일페이지바로가기">
+						</div>
+					</div>
+				</div>
+			</a>
+		</div><!-- third_line -->
+	</div><!-- bottom wrap -->
+
+	<footer>
+		<div class="footer_inner">
+			<div class="footer_contents">
+				<div class="footer_top">
+					<input type="checkbox" id="customerservice">
+					<label for="customerservice">고객서비스</label>
+					<div class="customer_slide_down slide-down">
+						<ul>
+							<li><a href="#none">자주묻는질문</a></li>
+							<li><a href="#none">고객관리지원팀</a></li>
+							<li><a href="#none">나의 프로필</a></li>
+							<li><a href="#none">나의 오더</a></li>
+							<li><a href="#none">주문 조회</a></li>
+							<li><a href="#none">교환 및 환불 규정</a></li>
+							<li><a href="#none">온라인 뷰티크 쇼핑</a></li>
+						</ul>
+					</div>
+					<input type="checkbox" id="company">
+					<label for="company">회사 소개</label>
+					<div class="company_slide_down slide-down">
+						<ul>
+							<li><a href="#none">법인 정보</a></li>
+							<li><a href="#none">커리어</a></li>
+						</ul>
+					</div>
+					<input type="checkbox" id="social">
+					<label for="social">소셜 네트워크</label>
+					<div class="social_slide_down slide-down">
+						<ul>
+							<li><a href="#none">인스타그램</a></li>
+							<li><a href="#none">페이스북</a></li>
+							<li><a href="#none">유튜브</a></li>
+						</ul>
+					</div>
+					<label for="terms">이용약관</label>
+					<label for="personal">개인정보처리방침</label>
+				</div><!-- footer_top -->
+				<div class="footer_txt">
+					<p>
+						이엘씨에이한국(유)대표: Teng,Hsiao-Hua(Catherin),서울시 강남구 강남대로 382 역삼동 메리츠타워,06232
+					</p>
+					<div class="business">
+						<p>사업자 등록번호: 211-81-71889</p>
+						<p>통신판매업신고번호:강남-15737호</p>
+						<p>사업자정보조회</p>
+					</div>
+					<div class="csteam">
+						<p>고객관리지원팀:(02)6971-3228</p>
+						<p>cunsumercare-kr@jomalone.com</p>
+					</div>
+					<p>호스팅 서비스 사업자:(주)엘지유플러스</p>
+					<p class="c">(c)Jo Malone London 2021<span>대한민국</span></p>
+				</div>
+				<div class="footer_right">
+					<div class="online_mall">
+						<div class="online_mall_sticker">
+							<div class="online_mall_title">
+								<p>JO MALONE</p>
+								<p>LONDON</p>
+							</div>
+							<P class="en">GUARANTEED AUTHENTIC</P>
+						</div>
+						<p>공식 온라인몰</p>
+					</div><!-- online_mall -->
+					<div class="sns">
+						<a href="#none"><i class="fab fa-instagram"></i></a>
+						<a href="#none"><i class="fab fa-facebook-f"></i></a>
+						<a href="#none"><i class="fab fa-youtube"></i></a>
+					</div>
+				</div>
+			</div><!-- footer_contents -->
+		</div><!-- footer_inner -->
+	</footer>
+	<a class="btn_top active" href="#none">Top</a>
+</body>
+
+</html>

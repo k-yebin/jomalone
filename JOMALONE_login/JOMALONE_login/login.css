@@ -1,0 +1,815 @@
+@font-face {
+    font-family: 'KOTRA_GOTHIC';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/KOTRA_GOTHIC.woff') format('woff');
+    font-weight: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'KOTRA_GOTHIC';
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+body {
+    background-color: #faf5e3;
+}
+
+/* TOP_BANNER */
+.top_banner {
+    width: 100%;
+    height: 40px;
+    background-color: black;
+    overflow: hidden;
+}
+
+.top_banner li {
+    height: inherit;
+    line-height: 40px;
+    padding-left: 20px;
+}
+
+.top_banner li a {
+    color: rgba(255, 255, 255, 0.699);
+}
+
+/* MAP */
+.map {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+}
+
+.map a {
+    font-family: 'Bookk Myungjo';
+}
+
+.map a:hover {
+    border-bottom: 1px solid #00000088;
+}
+
+.map i {
+    margin-top: 2px;
+    padding: 0 8px;
+    color: rgba(0, 0, 0, 0.726);
+}
+
+/* --------- login (txt) --------- */
+.login {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.login label:hover {
+    cursor: pointer;
+}
+
+.login .login_title {
+    height: 250px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+}
+
+.login .login_title video {
+    z-index: -1;
+}
+
+.login .login_title .title_txt {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0000007e;
+    color: white;
+    padding-top: 70px;
+}
+
+.login .login_title .title {
+    font-size: 50px;
+    font-family: 'Bookk Myungjo';
+    letter-spacing: 4px;
+}
+
+.login .login_title .sub_title {
+    font-family: 'KOTRA_GOTHIC';
+    margin-top: 20px;
+    letter-spacing: 1px;
+}
+
+.login .login_title .sub_title span {
+    font-family: 'Bookk Myungjo';
+}
+
+.login .login_txt {
+    font-family: 'KOTRA_GOTHIC';
+    font-size: 19px;
+}
+
+/* LOGIN(WRAP) */
+.login .login_wrap {
+    display: flex;
+    width: 1050px;
+    margin: 120px auto;
+}
+
+/* ---- select_btn ----- */
+.login .select_btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.login .select_btn a {
+    font-family: 'KOTRA_GOTHIC';
+    font-size: 17px;
+    font-weight: bold;
+    border: 2px solid black;
+    color: rgb(0, 0, 0);
+    width: 400px;
+    padding: 18px 0;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+.login .select_btn a:last-child {
+    background-color: rgba(0, 0, 0, 0.89);
+    color: rgba(255, 255, 255, 0.877);
+    font-weight: 200;
+}
+
+.login .select_btn a:last-child:hover {
+    background-color: black;
+    color: white;
+}
+
+.login .select_btn a:hover {
+    background-color: black;
+    color: white;
+    font-weight: 200;
+    transition: 0.3s;
+}
+
+.login .or-text {
+    font-family: 'Bookk Myungjo';
+    font-size: 20px;
+    display: block;
+    text-align: center;
+    position: relative;
+    width: 350px;
+    padding-top: 70px;
+}
+
+.login .or-text:before,
+.login .or-text:after {
+    position: absolute;
+    content: '';
+    background-color: rgba(0, 0, 0, 0.596);
+    height: 40%;
+    width: 1px;
+}
+
+.login .or-text:before {
+    top: -18px;
+    left: 136px;
+}
+
+.login .or-text:after {
+    bottom: 0;
+    right: 134px;
+}
+
+
+/* -------- checkbox -------- */
+
+.login form input[type=checkbox] {
+    display: none;
+}
+
+.login form label:before {
+    content: '\f00c';
+    font-family: fontawesome;
+    border: 1px solid black;
+    width: 14px;
+    height: 14px;
+    font-size: 13px;
+    vertical-align: middle;
+    display: inline-block;
+    margin: -2px 6px 0 0;
+    line-height: 14px;
+    color: transparent;
+    transition: 0.2s;
+}
+
+.login form input[type=checkbox]:checked+label:before {
+    color: white;
+    background-color: black;
+}
+
+.login form input[type=checkbox]+label:active:before {
+    transform: scale(0);
+}
+
+.login form {
+    font-family: 'KOTRA_GOTHIC';
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.login form label {
+    font-size: 17px;
+}
+
+.login form a {
+    font-size: 17px;
+}
+
+/* -------- sns -------- */
+.login .sns {
+    margin-left: -20px;
+}
+
+.login .sns .sns_title {
+    font-family: 'Bookk Myungjo';
+    font-size: 23px;
+    letter-spacing: 2px;
+    width: 350px;
+    margin-top: -10px;
+    display: inline-block;
+    text-align: center;
+}
+
+.login .sns .sns_icon {
+    margin: 20px auto 0;
+    width: 400px;
+    display: flex;
+}
+
+.login .sns .sns_icon span {
+    font-family: 'Bookk Myungjo';
+    font-size: 20px;
+    letter-spacing: -1px;
+    margin-top: 10px;
+}
+
+.login .sns .sns_icon div {
+    display: flex;
+    flex-direction: column;
+}
+
+.login .sns .sns_icon a {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    border: 1px solid rgba(0, 0, 0, 0.089);
+    box-sizing: border-box;
+    border-radius: 50%;
+    background-color: #faf5e3;
+    color: black;
+    line-height: 75px;
+    font-size: 35px;
+    margin: 0 36px;
+    position: relative;
+    overflow: hidden;
+}
+
+.login .sns .sns_icon a:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0;
+    background-color: black;
+    bottom: 0;
+    left: 0;
+    transition: 0.5s;
+}
+
+.login .sns .sns_icon a:hover:before {
+    height: 100%;
+}
+
+.login .sns .sns_icon a i {
+    position: relative;
+    transition: 0.5s;
+}
+
+.login .sns .sns_icon a:hover i {
+    transform: rotateY(360deg);
+    color: #faf5e3;
+}
+
+/* FINDSCENT*/
+.find_scent {
+    width: 900px;
+    height: 180px;
+    margin: 0 auto;
+    margin-top: 90px;
+    background-image: url(./images/test_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 35px;
+    box-sizing: border-box;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.637);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.find_scent:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.637);
+}
+
+.find_scent p:first-child {
+    color: rgba(0, 0, 0, 0.699);
+    font-family: 'Bookk Myungjo';
+    font-size: 35px;
+}
+
+.find_scent p:last-child {
+    font-family: 'Bookk Myungjo';
+    font-size: 17px;
+    background-color: rgba(255, 255, 255, 0.315);
+    width: 300px;
+    padding: 10px 0;
+    margin: 0 auto;
+    margin-top: 20px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.find_scent p:last-child:hover {
+    background-color: white;
+}
+
+/* -------- modal -------- */
+#login-modal {
+    font-family: 'KOTRA_GOTHIC';
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.329);
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: none;
+    z-index: 9999;
+}
+
+#login-modal.active {
+    display: block;
+}
+
+.modal-content {
+    background-color: #faf5e3;
+    width: 700px;
+    height: auto;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.486);
+    text-align: center;
+    animation: slidefade 0.3s linear;
+}
+
+.modal-content_inner {
+    display: flex;
+}
+
+.modal-content_inner .content_left {
+    width: 470px;
+    padding: 50px 0;
+}
+
+.modal-content_inner .content_left .btn-close {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 20px;
+    background-color: black;
+    color: rgba(255, 255, 255, 0.651);
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    cursor: pointer;
+}
+
+.modal-content_inner .content_left .btn-close:hover {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.486);
+    transition: 0.3s;
+}
+
+.btn-guide {
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 7px;
+    display: block;
+}
+
+@keyframes slidefade {
+    0% {
+        opacity: 0;
+        margin-top: -50px;
+    }
+
+    100% {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+/* -------- modal(login) -------- */
+
+.modal .content_left .modal-body .title {
+    font-family: 'Bookk Myungjo';
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.login input[type=id],
+.login input[type=password] {
+    width: 80%;
+    padding: 12px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #0000006c;
+    background-color: transparent;
+    margin-bottom: 30px;
+}
+
+.login input[type=id]:hover,
+.login input[type=password]:hover {
+    border-bottom: 1px solid black;
+}
+
+.login input[type=id]:focus::placeholder,
+.login input[type=password]:focus::placeholder {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+.login input[type=id]::placeholder,
+.login input[type=password]::placeholder {
+    opacity: 1;
+}
+
+
+.modal .content_left .modal-body .input_bar {
+    margin-top: 40px;
+}
+
+.modal .content_left .modal-body .input_bar p {
+    font-size: 14px;
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.modal .content_left .modal-body .modal_btn {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.753);
+    color: rgba(255, 255, 255, 0.863);
+    width: 80%;
+    margin: 20px auto 0;
+    padding: 12px 0;
+    box-sizing: border-box;
+}
+
+.modal .content_left .modal-body .modal_btn:hover {
+    background-color: black;
+    color: white;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.modal .content_right {
+    width: 230px;
+    background-image: url(./images/madal_banner.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: brightness(70%);
+}
+
+.modal .error_box {
+    margin-top: -25px;
+    margin-left: -255px;
+    font-size: 12px;
+    display: none;
+    padding: 4px 0;
+}
+
+/* -------- modal(find) -------- */
+#find-modal {
+    font-family: 'KOTRA_GOTHIC';
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.329);
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: none;
+}
+
+#find-modal .inner {
+    margin-top: 20px;
+}
+
+#find-modal.active {
+    display: block;
+}
+
+#find-modal form {
+    /* background-color: #faf5e3; */
+
+}
+
+#find-modal .modal-content {
+    background-color: #faf5e3d3;
+    width: 900px;
+    height: auto;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.486);
+    text-align: center;
+    animation: slidefade 0.3s linear;
+    padding-bottom: 20px;
+}
+
+#find-modal .id_title,
+.pw_title {
+    padding: 20px 0;
+    margin-bottom: 10px;
+}
+
+#find-modal .id_title {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.719), rgba(0, 0, 0, 0.719)), url(./images/Scents_SMPP_DT_Spicy.jpg);
+    color: rgba(255, 255, 255, 0.774);
+
+}
+
+#find-modal .pw_title {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.719), rgba(0, 0, 0, 0.719)), url(./images/Scents_SMPP_DT_Floral.avif);
+    color: rgba(255, 255, 255, 0.774);
+}
+
+/* -------- modal(find-content) -------- */
+#find-modal #findBtn {
+    height: 20px;
+    width: 20px;
+    border: 1px solid black;
+    background-color: #000;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+}
+
+#find-modal #findBtn:hover {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.486);
+    transition: 0.3s;
+}
+
+#find-modal .modal-content {
+    display: flex;
+}
+
+#find-modal .modal-content h3 {
+    font-size: 20px;
+    font-weight: 200;
+    margin-bottom: 7px;
+}
+
+#find-modal .modal-content .sub {
+    font-size: 17px;
+    margin-bottom: 5px;
+    color: rgba(255, 255, 255, 0.301);
+}
+
+#find-modal .modal-content .id {
+    flex: 1;
+    color: rgba(0, 0, 0, 0.575);
+}
+
+#find-modal .modal-content .id .inner {
+    border-right: 1px solid rgba(0, 0, 0, 0.267);
+}
+
+#find-modal .modal-content .pw {
+    flex: 1;
+    color: rgba(0, 0, 0, 0.575);
+}
+
+
+/* -------- modal(find-content(tab)) -------- */
+.content {
+    display: none;
+}
+
+input[id=tab1]:checked~.slide1 {
+    display: block;
+}
+
+input[id=tab2]:checked~.slide2 {
+    display: block;
+}
+
+input[type=radio] {
+    accent-color: rgb(0, 0, 0);
+    margin-left: 30px;
+}
+
+input[type=radio]:first-child {
+    margin-left: 0;
+}
+
+#find-modal .content form {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 13px 0 27px;
+}
+
+#find-modal .content form div {
+    width: 75%;
+    position: relative;
+    margin-top: 10px;
+}
+
+#find-modal .content form div .title {
+    display: block;
+    text-align: left;
+    margin-left: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    letter-spacing: 1px;
+}
+
+#find-modal .content form div button {
+    font-family: 'KOTRA_GOTHIC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 31px;
+    border: 1px solid rgba(255, 255, 255, 0.247);
+    color: #ffffffd7;
+    background-color: transparent;
+    padding: 2px 5px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+input[type=name] {
+    font-family: 'KOTRA_GOTHIC';
+    border: none;
+    border-bottom: 1px solid #00000083;
+    background-color: transparent;
+    padding: 10px 0;
+    width: 100%;
+    margin-left: 10px;
+}
+
+input[type=name]:hover {
+    border-bottom: 1px solid #000000;
+    transition: 0.3s;
+}
+
+input[type=name]:focus::placeholder {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+input[type=name]::placeholder {
+    opacity: 1;
+    color: #000000b6;
+}
+
+#find-modal .content .find-btn {
+    background-color: #000000e0;
+    color: white;
+    padding: 10px 0;
+    width: 250px;
+    display: block;
+    margin: 20px auto 0;
+}
+
+#find-modal .content .find-btn:hover {
+    background-color: black;
+    color: white;
+    transition: 0.3s;
+}
+
+#find-modal select {
+    width: 100%;
+    font-size: 15px;
+    display: inline-block;
+    text-align: start;
+    padding: 10px 0;
+    border: 2px solid rgba(0, 0, 0, 0.24);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#find-modal select:hover {
+    border: 2px solid black;
+    transition: 0.3s;
+}
+
+#find-modal .email_wrap .email_code {
+    display: flex;
+    align-items: center;
+    width: 103%;
+    margin-top: -4px;
+}
+
+#find-modal .email_wrap .email_code span {
+    width: 70px;
+    text-align: center;
+    margin-left: 10px;
+    color: #000;
+}
+
+#find-modal .email_wrap .email_code select {
+    margin-left: 10px;
+    width: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.705);
+    color: rgb(0, 0, 0);
+}
+
+#find-modal .email_wrap a {
+    display: block;
+    border: 1px solid rgba(0, 0, 0, 0.705);
+    color: rgb(3, 3, 3);
+    background-color: transparent;
+    margin-left: 10px;
+    padding: 5px 0;
+    margin-top: 10px;
+    font-weight: 200;
+}
+
+#find-modal .pw .inner form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 90%;
+    height: 219px;
+    margin-top: 43px;
+    padding: 20px 0;
+}
+
+#find-modal .pw .inner form div {
+    width: 70%;
+}
+
+#find-modal .pw .inner form div .title {
+    display: block;
+    text-align: left;
+    margin-left: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(15, 15, 15);
+    letter-spacing: 1px;
+}
+
+
+#find-modal .pw .find-btn {
+    background-color: #000000e0;
+    color: white;
+    padding: 10px 0;
+    width: 250px;
+    display: block;
+    margin: 20px auto 0;
+}
+
+#find-modal .pw .find-btn:hover {
+    background-color: #000;
+    transition: 0.3s;
+}
